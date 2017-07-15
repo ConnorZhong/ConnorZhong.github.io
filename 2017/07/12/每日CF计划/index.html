@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://connorzhong.github.io/2017/07/12/每日CF计划/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
 <meta property="og:description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $7$。 目前做了多少题了： $37$。  TBDCodeforces Round #424 (5/8) CF 831A 水 CF 831B 水 CF 831C 随便取一个 $b_0$，固定位置，其他所有的值就确定了。所以枚举下固定的位置，用 map 维护状态和去重。 复杂度 $O(n^2\log n)$ CF 830A 易证明结论，选">
-<meta property="og:updated_time" content="2017-07-15T10:23:01.000Z">
+<meta property="og:updated_time" content="2017-07-15T11:02:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每日CF计划">
 <meta name="twitter:description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $7$。 目前做了多少题了： $37$。  TBDCodeforces Round #424 (5/8) CF 831A 水 CF 831B 水 CF 831C 随便取一个 $b_0$，固定位置，其他所有的值就确定了。所以枚举下固定的位置，用 map 维护状态和去重。 复杂度 $O(n^2\log n)$ CF 830A 易证明结论，选">
@@ -114,7 +114,7 @@
 <li><code>CF 815A</code> 固定第一行，就唯一确定了所有的情况，暴力。</li>
 <li><code>CF 815B</code> <del>遇事不决打表找规律</del>，比赛中不应该那么早就放弃治疗的，完全可以打打表？题解中有一个十分优雅的做法。大意就是可以拆成两个只包含加法的部分。</li>
 <li><code>CF 815C</code> 套路依赖背包。不过竟然可以用巧妙的实现，把这个朴素 dp 变成 $O(n^2)$，官方题解反而傻逼了（？）。看完 <a href="http://codeforces.com/blog/entry/52742?#comment-371082" target="_blank" rel="external">Um_nik</a> 的证明和实现，还有这种操作.jpg?</li>
-<li><code>CF 815D</code> 考虑固定 $c$，后面就是一个区间取 $\max$，区间求和，用吉老师线段树就轻松秒过了啊（根本不用像题解那么麻烦的观察性质）。Um<em>nik 的一个直接的做法：用容斥原理求三个阶梯形立方体的体积交，用前缀和处理出每个维度$x,y,z$ 的对应关系 $x(y),x(z),y(x),y(z),z(x),z(y)$，后面全都以以枚举 $x$ 为例，单个维度的比较容易求： $\sum^{p}</em>{x=1} y(x)*r$，两个维度交也易求：$\sum_{x=1}^{p} y(x)z(x)$。三个维度交比较麻烦，画图后发现分情况讨论：对于固定的 $x$ 如果$y(x),z(x)$构成的矩形在 $z-y$ 平面对应的阶梯之内，即$z(y(x))&gt;y(x)$直接求得 $y(x)z(x)$ 就可以，否则可以把其拆成两部分的和， $z(y(x))y(x)$ + $f(z(x))-f(z(y(x)))$ ，前一项是矩形面积后一项是阶梯面积，其中$f(x)$ 是函数 $z(y)$ 的前缀和。</li>
+<li><code>CF 815D</code> 考虑固定 $c$，后面就是一个区间取 $\max$，区间求和，用吉老师线段树就轻松秒过了啊（根本不用像题解那么麻烦的观察性质）。<a href="http://codeforces.com/blog/entry/52742?#comment-368104" target="_blank" rel="external">Um_nik</a> 一个直接的做法：用容斥原理求三个阶梯形立方体的体积交，用前缀和处理出每个维度$x,y,z$ 的对应关系 $x(y),x(z),y(x),y(z),z(x),z(y)$，后面全都以以枚举 $x$ 为例，单个维度很容易求：$\sum_{x=1}^{p} ry(x)$， 两个维度交也易求：$\sum_{x=1}^{p} y(x)z(x)$。三个维度交比较麻烦，画图后发现分情况讨论：对于固定的 $x$ 如果$y(x),z(x)$构成的矩形在 $z-y$ 平面对应的阶梯之内，即$z(y(x))&gt;y(x)$直接求得 $y(x)z(x)$ 就可以，否则可以把其拆成两部分的和， $z(y(x))y(x)+ f(z(x))-f(z(y(x)))$ ，前一项是矩形面积后一项是阶梯面积，其中$f(x)$ 是函数 $z(y)$ 的前缀和。</li>
 </ul>
 <h2 id="Codeforces-Round-422-5-6"><a href="#Codeforces-Round-422-5-6" class="headerlink" title="Codeforces Round #422 (5/6)"></a>Codeforces Round #422 (5/6)</h2><ul>
 <li><code>CF 822A</code> 水题，阶乘不会爆 int。</li>
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/12/每日CF计划/" data-id="cj555eews00027ii49iu6048h" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/12/每日CF计划/" data-id="cj556on3u0003bei45jxftmvz" class="article-share-link">Share</a>
       
       
     </footer>
