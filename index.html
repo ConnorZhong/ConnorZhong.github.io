@@ -92,22 +92,30 @@
       
         <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>暑假每天坚持做 CF！</p>
 <ul>
-<li>目前做了多少套了： $5$。</li>
-<li>目前做了多少题了： $26$。</li>
+<li>目前做了多少套了： $7$。</li>
+<li>目前做了多少题了： $37$。</li>
 </ul>
-<h1 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h1><h2 id="Codeforces-Round-423-5-8"><a href="#Codeforces-Round-423-5-8" class="headerlink" title="Codeforces Round #423 (5/8)"></a>Codeforces Round #423 (5/8)</h2><ul>
+<h1 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h1><h2 id="Codeforces-Round-424-5-8"><a href="#Codeforces-Round-424-5-8" class="headerlink" title="Codeforces Round #424 (5/8)"></a>Codeforces Round #424 (5/8)</h2><ul>
+<li><code>CF 831A</code> 水</li>
+<li><code>CF 831B</code> 水</li>
+<li><code>CF 831C</code> 随便取一个 $b_0$，固定位置，其他所有的值就确定了。所以枚举下固定的位置，用 map 维护状态和去重。 复杂度 $O(n^2\log n)$</li>
+<li><code>CF 830A</code> 易证明结论，选取的钥匙必定是连续的一段，且钥匙按照位置顺序依次选取时，最大时间最短。因此就可以 $O(n^2)$ 的一个暴力。</li>
+<li><code>CF 830B</code> 简单拿个树状数组维护一下每个位置前面有多少张牌，记录下牌序，直接走一遍就可以了。trick 是牌有重复编号。</li>
+</ul>
+<h2 id="Codeforces-Round-423-5-8"><a href="#Codeforces-Round-423-5-8" class="headerlink" title="Codeforces Round #423 (5/8)"></a>Codeforces Round #423 (5/8)</h2><ul>
 <li><code>CF 828A</code> 水。</li>
 <li><code>CF 828B</code> 水，请不要图方便想当然地写一个花式结论。</li>
 <li><code>CF 827A</code> 惨遭CF卡常数，我还真是很少用cin…一用就死了…这个题需要找一个稳定复杂度的做法，排序，扫。</li>
 <li><code>CF 827B</code> 大概就是很本能的围着菊花构造啊。多想想细节，有没有好写的方法。</li>
 <li><code>CF 827C</code> 这个 $|e|$ 只有 $10$ 啊，分 $|e|^2$ 组树状数组就艹过去了啊。</li>
 </ul>
-<h2 id="Codeforces-Round-419-5-7"><a href="#Codeforces-Round-419-5-7" class="headerlink" title="Codeforces Round #419 (5/7)"></a>Codeforces Round #419 (5/7)</h2><ul>
+<h2 id="Codeforces-Round-419-6-7"><a href="#Codeforces-Round-419-6-7" class="headerlink" title="Codeforces Round #419 (6/7)"></a>Codeforces Round #419 (6/7)</h2><ul>
 <li><code>CF 816A</code> 水题。</li>
 <li><code>CF 816B</code> 花式前缀和。</li>
 <li><code>CF 815A</code> 固定第一行，就唯一确定了所有的情况，暴力。</li>
 <li><code>CF 815B</code> <del>遇事不决打表找规律</del>，比赛中不应该那么早就放弃治疗的，完全可以打打表？题解中有一个十分优雅的做法。大意就是可以拆成两个只包含加法的部分。</li>
 <li><code>CF 815C</code> 套路依赖背包。不过竟然可以用巧妙的实现，把这个朴素 dp 变成 $O(n^2)$，官方题解反而傻逼了（？）。看完 <a href="http://codeforces.com/blog/entry/52742?#comment-371082" target="_blank" rel="external">Um_nik</a> 的证明和实现，还有这种操作.jpg?</li>
+<li><code>CF 815D</code> 考虑固定 $c$，后面就是一个区间取 $\max$，区间求和，用吉老师线段树就轻松秒过了啊（根本不用像题解那么麻烦的观察性质）。Um<em>nik 的一个直接的做法：用容斥原理求三个阶梯形立方体的体积交，用前缀和处理出每个维度$x,y,z$ 的对应关系 $x(y),x(z),y(x),y(z),z(x),z(y)$，后面全都以以枚举 $x$ 为例，单个维度的比较容易求： $\sum^{p}</em>{x=1} y(x)*r$，两个维度交也易求：$\sum_{x=1}^{p} y(x)z(x)$。三个维度交比较麻烦，画图后发现分情况讨论：对于固定的 $x$ 如果$y(x),z(x)$构成的矩形在 $z-y$ 平面对应的阶梯之内，即$z(y(x))&gt;y(x)$直接求得 $y(x)z(x)$ 就可以，否则可以把其拆成两部分的和， $z(y(x))y(x)$ + $f(z(x))-f(z(y(x)))$ ，前一项是矩形面积后一项是阶梯面积，其中$f(x)$ 是函数 $z(y)$ 的前缀和。</li>
 </ul>
 <h2 id="Codeforces-Round-422-5-6"><a href="#Codeforces-Round-422-5-6" class="headerlink" title="Codeforces Round #422 (5/6)"></a>Codeforces Round #422 (5/6)</h2><ul>
 <li><code>CF 822A</code> 水题，阶乘不会爆 int。</li>
@@ -128,14 +136,21 @@
 <li><code>CF 821A</code> 水题。</li>
 <li><code>CF 821B</code> 枚举下每一个 $y$，求出直线下方的最大的 $x$。</li>
 <li><code>CF 821C</code> 用栈模拟一下，一旦顶部不匹配，就把栈清空模拟打乱，标记一下打乱的值。重复下就做完了。</li>
-<li><code>CF 821D</code> 其实蛮套路的一个虚点最短路。当时第一反应是瞎 jb 缩点套 BFS。int 数组写成了 bool，于是失了智地交了 $16$ 发啊。</li>
+<li><code>CF 821D</code> 其实蛮套路的一个虚点最短路。当时第一反应是瞎 jb 缩点套 BFS。int 数组写成了 bool，于是失了智地了 $16$ 发啊。</li>
 <li><code>CF 821E</code> 套路矩阵快速幂，其实没什么好讲的，检查是否爆 int 时一定要对每一个 int 逐行检查。 </li>
+</ul>
+<h2 id="Codeforces-Round-416-5-5"><a href="#Codeforces-Round-416-5-5" class="headerlink" title="Codeforces Round #416 (5/5)"></a>Codeforces Round #416 (5/5)</h2><ul>
+<li><code>CF 811A</code>  直接暴力模拟是 $O(\sqrt n)$ 的。</li>
+<li><code>CF 811B</code>  区间第 $k$ 大，div2B 的话大概用个暴力就行了。</li>
+<li><code>CF 811C</code>  异或的一个特性 $a+b\geq a \oplus b$。因此如果可以把一个长区间拆开，优先选择拆开，<del>虽然这个特点好像对复杂度没啥贡献</del>。枚举起点得到每一个区间，区间起点为 $i$，终点为 $j$，区间权值为 $w$，有 $dp[j] = \max(dp[j],dp[i]+w)$。</li>
+<li><code>CF 811D</code> 傻逼交互题，随便搜条路径，走一个未知指令前注意判断一下自己的前进方向有没有被交换。 就可以了。</li>
+<li><code>CF 811E</code> 套路线段树维护连通性，每个节点用并查集维护一下左侧和右侧边界的连通性，合并的时候就把相邻接的边合并一下，扣除合并的联通快个数。学习了下 zscls 的写法，很棒棒啊。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/12/每日CF计划/" data-id="cj501kcya0002tai40lbzdveu" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/12/每日CF计划/" data-id="cj555eews00027ii49iu6048h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj501kcy50000tai4zmriunwf" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj555eex800037ii4tynsdnzy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj501kcy90001tai4ixh2q736" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj555eewk00007ii40o92a1xg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -310,13 +325,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Spring-Daily-Practice"><a href="#Spring-Daily-Practice" class="headerlink" title="Spring Daily Practice"></a>Spring Daily Practice</h1><ul>
-<li>响应昂老师的偏方，<code>* 500 左右ac 泛刷</code> 每周最少 $7$ 。做起来还是很爽的啊～ </li>
-<li><p><code>CF *</code> 泛刷， Solved: $44$。</p>
-<p>​</p>
-</li>
+        <h1 id="Spring-Daily-Practice"><a href="#Spring-Daily-Practice" class="headerlink" title="Spring Daily Practice"></a>Spring Daily Practice</h1><h2 id=""><a href="#" class="headerlink" title="???"></a>???</h2><ul>
+<li><code>POJ 1273</code> 最大流模版题。</li>
+<li><code>HDU 5306</code> 吉老师线段树，很难很绝望啊。区间取 $\min$ 区间求和。维护线段树 $tag$ 的单调性，来尝试更新区间和，需要维护的有：子树中最大的 $tag$ ，子树中已经被 $tag$ 支配的叶子结点个数。</li>
 </ul>
-<h2 id="2017-5-29-…"><a href="#2017-5-29-…" class="headerlink" title="2017-5-29 ~ …"></a>2017-5-29 ~ …</h2><ul>
+<ul>
 <li><code>POJ 3171</code> 线段树dp，竟然写炸了…</li>
 <li><code>POJ 3420</code> 实在羞愧于不会推公式，写了一层轮廓线 dp，求出了公式，题解公式只有 $5$ 项，我有 $2^4$ 项啊…复杂度就冲上去了，好在并没有什么关系。</li>
 <li><code>CF 633G*</code> 拿一个 $1000$ 的 bitset 来维护每个节点存在的点的值。加法就是循环左移，再做一个质数表的 mask。</li>
@@ -536,7 +549,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj501kcyc0003tai4kam6ecgr" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj555eewp00017ii4grafjpri" class="article-share-link">Share</a>
       
       
     </footer>
