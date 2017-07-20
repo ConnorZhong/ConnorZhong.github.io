@@ -70,8 +70,8 @@
   
     <article id="post-每日CF计划" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/07/19/每日CF计划/" class="article-date">
-  <time datetime="2017-07-18T17:10:42.000Z" itemprop="datePublished">2017-07-19</time>
+    <a href="/2017/07/20/每日CF计划/" class="article-date">
+  <time datetime="2017-07-19T17:10:42.000Z" itemprop="datePublished">2017-07-20</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/每日CF计划/">每日CF计划</a>
+      <a class="article-title" href="/2017/07/20/每日CF计划/">每日CF计划</a>
     </h1>
   
 
@@ -92,19 +92,21 @@
       
         <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>暑假每天坚持做 CF！</p>
 <ul>
-<li>目前做了多少套了： $9$。</li>
-<li>目前做了多少题了： $44$。</li>
+<li>目前做了多少套了： $10$。</li>
+<li>目前做了多少题了： $53$。</li>
 </ul>
 <h1 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h1><h2 id="Codeforces-Round-406-5-8"><a href="#Codeforces-Round-406-5-8" class="headerlink" title="Codeforces Round #406 (5/8)"></a>Codeforces Round #406 (5/8)</h2><ul>
 <li><code>CF 786A</code> 有向图博弈，根据必胜必败态的性质来进行更新。很惭愧这么晚才补这个题。</li>
 <li><code>CF 786C</code> 考虑所有的答案之和不超过 $n\log n$ 个。所以题目变成了用 $O(\log n)$ 的复杂度查询给定 $l,k$ 求最远的 $r$，标程可持久化线段树。学习 comment 学到了利用倍增的思想在树状数组上求最远延伸 $r$，所以就相当于把询问离线了，所有的询问一起做。枚举 $l$ 时，把 $l-1$ 位置减 $1$， 下一个同样数字的位置加 $1$，就好了。  </li>
 </ul>
-<h2 id="Codeforces-Round-424-5-8"><a href="#Codeforces-Round-424-5-8" class="headerlink" title="Codeforces Round #424 (5/8)"></a>Codeforces Round #424 (5/8)</h2><ul>
+<h2 id="Codeforces-Round-424-7-8"><a href="#Codeforces-Round-424-7-8" class="headerlink" title="Codeforces Round #424 (7/8)"></a>Codeforces Round #424 (7/8)</h2><ul>
 <li><code>CF 831A</code> 水</li>
 <li><code>CF 831B</code> 水</li>
 <li><code>CF 831C</code> 随便取一个 $b_0$，固定位置，其他所有的值就确定了。所以枚举下固定的位置，用 map 维护状态和去重。 复杂度 $O(n^2\log n)$</li>
 <li><code>CF 830A</code> 易证明结论，选取的钥匙必定是连续的一段，且钥匙按照位置顺序依次选取时，最大时间最短。因此就可以 $O(n^2)$ 的一个暴力。</li>
 <li><code>CF 830B</code> 简单拿个树状数组维护一下每个位置前面有多少张牌，记录下牌序，直接走一遍就可以了。trick 是牌有重复编号。</li>
+<li><code>CF 830C</code> 列一下式子会发现是 $d\sum \left \lceil \frac{a_i}{d} \right \rceil \geq k + \sum a_i$ 求 $d$ 的最大值，对于每个$a_i$ ，$\left \lceil \frac{a_i}{d} \right \rceil$ 的取值最多有 $\sqrt{a_i}$ 个。所以用$n/i$ 到 $n/(n/i)$ 分块枚举一下。对每个区间求一下 $d$。二分的话抠一下常数也能过。</li>
+<li><code>CF 830D</code>  dp。考虑 $f(i,j)$ 表示第 $i$ 层，能够选出 $j$ 组互不相交的简单路径的方案数。对于每一层，令 $l$ 表示从左子树选出的路径组数， $r$ 是从右子树中选出的路径组数。枚举所有的 $l,r$ 组合，讨论是否选用根节点，根节点直接连在左右子树，和根节点直接连接两侧。可以得到转移。dp 的第 $2$ 维会到 $2^i$ 的范围。但是由于我们只需要知道 $f(k,1)$ ，由转移方程知道，每一个 $j$ ，最多向下影响到$j-1$。所以第二维实际只需要知道前 $k$ 个值。因此 $O(k^3)$。这个题卡常。  </li>
 </ul>
 <h2 id="Codeforces-Round-423-5-8"><a href="#Codeforces-Round-423-5-8" class="headerlink" title="Codeforces Round #423 (5/8)"></a>Codeforces Round #423 (5/8)</h2><ul>
 <li><code>CF 828A</code> 水。</li>
@@ -157,11 +159,20 @@
 <li><code>CF 785D</code> 组合数学，很努力的数一下啊。很容易考虑枚举每一位 $i$，当前位置必选为左括号，设 $i$ 之前的左扩号数位 $l$， $i$ 之后的右括号数为 $r$，$\sum C(l,j-1)C(r,j)$，变型一下，等同于$\sum C(l,j-1)C(r,r-j)$ 即从 $l+r$ 个球中取 $r-1$ 个， $C(l+r,r-1)$。这就好了啊～谢谢 qls 解释证明。</li>
 <li><code>CF 785E</code> 分块大法好。几乎很少写分块，拿着这个题练了练手。 </li>
 </ul>
+<h2 id="Educational-Codeforces-Round-25"><a href="#Educational-Codeforces-Round-25" class="headerlink" title="Educational Codeforces Round 25"></a>Educational Codeforces Round 25</h2><ul>
+<li><code>CF 825A</code> 水题。</li>
+<li><code>CF 825B</code> 水题，搜。</li>
+<li><code>CF 825C</code> 这个题。题意没有说明下取整，读题有毒。</li>
+<li><code>CF 825D</code> 其实就变成了计算 $s$ 中有多少个 $t$ 串，字符集不大，直接枚举。</li>
+<li><code>CF 825E</code> 倒序建图，直接拓扑序列标就行了，反证法证明。这种题做之前先证明一下比较好。</li>
+<li><code>CF 825F</code> 用 KMP 的 next 数组 dp。要注意一个结论，设前缀为 $e$ ，$|e| \equiv0\mod  |e| -next<em>{|e|} $ 时，这一段前缀其实是一个周期为 $e-next</em>{|e|}$ 的循环串。所以令 $f(i)$ 为前 $i$ 个字符的最短长度。直接对每一个后缀做一遍 KMP， $O(n)$ 转移就可以了。</li>
+<li><code>CF 825G</code> 其实很容易想到，维护所有黑点形成的生成树上点的全局的最小值，询问的时候就将询问点到生成树的路径上的点与这个最小值取 $\min$ 。于是直接以第一个黑点为根，dfs 算一下每个节点到根节点路径上的最小值 $d_i$。询问就是将 $x$ 的 $d_x$ 与全局生成树的最小值取 $\min$，更新就是用 $d_x$ 来更新这个全局的最小值。 其实这个题反而很简单。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/19/每日CF计划/" data-id="cj59upp3y0004pyi4af7v8nfr" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj5ctbnv60003mri4uremg338" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj59upp3s0001pyi4o5azjaro" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj5ctbnv30002mri4rdasybxx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj59upp3x0003pyi4diboh1v8" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj5ctbnv80004mri4th1qf1r2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj59upp3o0000pyi48w9sb8jw" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj5ctbnuw0000mri43xhpseqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -389,6 +400,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Spring-Daily-Practice"><a href="#Spring-Daily-Practice" class="headerlink" title="Spring Daily Practice"></a>Spring Daily Practice</h1><h2 id=""><a href="#" class="headerlink" title="???"></a>???</h2><ul>
+<li><code>hdu 1285</code> 与 <code>CF 825E</code> 对照，先证明，想清楚。 </li>
+<li><code>hiho 1015</code> kmp 模版。 </li>
+<li><code>BZOJ 1257 &amp;&amp; SPOJ NAGAY</code> 余数求和，$n/i$ 到 $n/(n/i)$ 分块。</li>
 <li><code>POJ 1273</code> 最大流模版题。</li>
 <li><code>HDU 5306</code> 吉老师线段树，很难很绝望啊。区间取 $\min$ 区间求和。维护线段树 $tag$ 的单调性，来尝试更新区间和，需要维护的有：子树中最大的 $tag$ ，子树中已经被 $tag$ 支配的叶子结点个数。</li>
 </ul>
@@ -612,7 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj59upp3v0002pyi4clzfwpev" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj5ctbnv10001mri4mqoesauu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -652,7 +666,7 @@
       <ul>
         
           <li>
-            <a href="/2017/07/19/每日CF计划/">每日CF计划</a>
+            <a href="/2017/07/20/每日CF计划/">每日CF计划</a>
           </li>
         
           <li>
