@@ -5,16 +5,16 @@
   
   <title>反演魔术小结 | ConnorZhong is weak</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)   \leftri">
+  <meta name="description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)\leftright">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反演魔术小结">
 <meta property="og:url" content="http://connorzhong.github.io/2017/08/25/反演魔术小结/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
-<meta property="og:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)   \leftri">
-<meta property="og:updated_time" content="2017-08-27T05:02:59.000Z">
+<meta property="og:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)\leftright">
+<meta property="og:updated_time" content="2017-08-27T06:41:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反演魔术小结">
-<meta name="twitter:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)   \leftri">
+<meta name="twitter:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)\leftright">
   
     <link rel="alternate" href="/atom.xml" title="ConnorZhong is weak" type="application/atom+xml">
   
@@ -103,12 +103,12 @@
 <ul>
 <li>$[gcd(i,j)=k]$</li>
 <li>$gcd(i,j)$</li>
-<li>$f(n)=\sum<em>{d|n}g(d)   \leftrightarrow g(n)=\sum</em>{d|n}\mu(\frac{n}{d})f(d)$</li>
+<li>$f(n)=\sum<em>{d|n}g(d)\leftrightarrow g(n)=\sum</em>{d|n}\mu(\frac{n}{d})f(d)$</li>
 </ul>
 <p>核心代码</p>
 <ul>
 <li>线性筛</li>
-<li>分块加速 $[n/i,n/(n/i)]$</li>
+<li>分块加速 $[n/i,n/(n/i)]​$</li>
 </ul>
 <h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><p><a href="https://vjudge.net/contest/180934#overview" target="_blank" rel="external">题目链接</a></p>
 <h2 id="A-Visible-Lattice-Points-SPOJ-VLATTICE"><a href="#A-Visible-Lattice-Points-SPOJ-VLATTICE" class="headerlink" title="A. Visible Lattice Points (SPOJ VLATTICE)"></a>A. Visible Lattice Points (SPOJ VLATTICE)</h2><blockquote>
@@ -142,7 +142,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6ud6jxx000177i4raql5nfw" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6ud9car00037si4lj3e7eyw" class="article-share-link">Share</a>
       
       
     </footer>
