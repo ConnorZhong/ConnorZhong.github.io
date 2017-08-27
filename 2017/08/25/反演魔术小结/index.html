@@ -5,16 +5,16 @@
   
   <title>反演魔术小结 | ConnorZhong is weak</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)\leftright">
+  <meta name="description" content="[TOC] 基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$  $gcd(i,j)$  f(n)=\sum_{d|n}g(d)\l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反演魔术小结">
 <meta property="og:url" content="http://connorzhong.github.io/2017/08/25/反演魔术小结/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
-<meta property="og:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)\leftright">
-<meta property="og:updated_time" content="2017-08-27T06:41:01.000Z">
+<meta property="og:description" content="[TOC] 基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$  $gcd(i,j)$  f(n)=\sum_{d|n}g(d)\l">
+<meta property="og:updated_time" content="2017-08-27T06:55:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反演魔术小结">
-<meta name="twitter:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)\leftright">
+<meta name="twitter:description" content="[TOC] 基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$  $gcd(i,j)$  f(n)=\sum_{d|n}g(d)\l">
   
     <link rel="alternate" href="/atom.xml" title="ConnorZhong is weak" type="application/atom+xml">
   
@@ -89,7 +89,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本套路"><a href="#基本套路" class="headerlink" title="基本套路"></a>基本套路</h1><p>算法竞赛中常见的反演套路，主要是围绕两个函数展开。</p>
+        <p>[TOC]</p>
+<h1 id="基本套路"><a href="#基本套路" class="headerlink" title="基本套路"></a>基本套路</h1><p>算法竞赛中常见的反演套路，主要是围绕两个函数展开。</p>
 <ul>
 <li>莫比乌斯函数 $\mu(x)$.</li>
 <li>欧拉函数 $\varphi(x)$.</li>
@@ -101,14 +102,17 @@
 </ul>
 <p>常见套路</p>
 <ul>
-<li>$[gcd(i,j)=k]$</li>
-<li>$gcd(i,j)$</li>
-<li>$f(n)=\sum<em>{d|n}g(d)\leftrightarrow g(n)=\sum</em>{d|n}\mu(\frac{n}{d})f(d)$</li>
+<li><p>$[gcd(i,j)=k]$</p>
+</li>
+<li><p>$gcd(i,j)$</p>
+</li>
+<li><p><script type="math/tex">f(n)=\sum_{d|n}g(d)\leftrightarrow g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script>s</p>
+</li>
 </ul>
 <p>核心代码</p>
 <ul>
 <li>线性筛</li>
-<li>分块加速 $[n/i,n/(n/i)]​$</li>
+<li>分块加速 $[n/i,n/(n/i)]$</li>
 </ul>
 <h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><p><a href="https://vjudge.net/contest/180934#overview" target="_blank" rel="external">题目链接</a></p>
 <h2 id="A-Visible-Lattice-Points-SPOJ-VLATTICE"><a href="#A-Visible-Lattice-Points-SPOJ-VLATTICE" class="headerlink" title="A. Visible Lattice Points (SPOJ VLATTICE)"></a>A. Visible Lattice Points (SPOJ VLATTICE)</h2><blockquote>
@@ -132,7 +136,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <p>给 $n,m,p,Q$。 $Q$ 组询问，每组询问 $n,m,p$ 表示 $x\in[1,n],y\in[1,m]$，$gcd(x,y)$ 的分解质因数后的项数小于 $p$ 的有序数对个数. $n,m,p \leq 10^5,Q\leq 5000$. </p>
 </blockquote>
 <p>考虑子问题求 $gcd(x,y)=k$ 的对数 $\sum_{d=1}^{n/k}\mu(d)\left \lfloor \frac{n}{kd} \right \rfloor \left \lfloor \frac{m}{kd} \right \rfloor$. </p>
-<p>注意到我们对于任意一个 $k$， 考虑相当于枚举了 $n/k$ 个 $kd$ 计算 $\left \lfloor \frac{n}{kd} \right \rfloor \left \lfloor \frac{m}{kd} \right \rfloor$，乘上一个系数 $\mu(d)$。于是我们考虑求 $gcd(x,y) \in K$，可以枚举每一个元素 $k\in K$。求得一个新的系数 $f(x)=\sum<em>{d=x/k,k|x,k\in K} \mu(d)$.  $\sum</em>{d=1}^{n}f(d)\left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{m}{d} \right \rfloor$ 即是所求的值。</p>
+<p>注意到我们对于任意一个 $k$， 考虑相当于枚举了 $n/k$ 个 $kd$ 计算 $\left \lfloor \frac{n}{kd} \right \rfloor \left \lfloor \frac{m}{kd} \right \rfloor$，乘上一个系数 $\mu(d)$。于是我们考虑求 $gcd(x,y) \in K$，可以枚举每一个元素 $k\in K$。求得一个新的系数 <script type="math/tex">f(x)=\sum_{d=x/k,k|x,k\in K} \mu(d), \sum_{d=1}^{n}f(d)\left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{m}{d} \right \rfloor</script>即是所求的值。</p>
 <p>于是我们可以筛出 $\mu(d)$，处理出每一个数的质因子数，然后在枚举每一个数 $k\in[1,n]$ 处理出所有的 $f(x)$，并做一个二维前缀和，这部分复杂度是 $O(n\log n)$。 后面就跟常规的处理方式一样了，分块加速$O(\sqrt(n)+\sqrt(m))$。</p>
 <p>复杂度 $O(n\log n+Q(\sqrt n+\sqrt m))$</p>
 <h2 id="D-GCD-of-Sequence-HDU-4675"><a href="#D-GCD-of-Sequence-HDU-4675" class="headerlink" title="D. GCD of Sequence (HDU 4675)"></a>D. GCD of Sequence (HDU 4675)</h2><blockquote>
@@ -142,7 +146,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6ud9car00037si4lj3e7eyw" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6udsiij00038mi4g4bboxrj" class="article-share-link">Share</a>
       
       
     </footer>
