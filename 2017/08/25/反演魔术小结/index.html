@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://connorzhong.github.io/2017/08/25/反演魔术小结/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
 <meta property="og:description" content="[TOC] 基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$  $gcd(i,j)$  f(n)=\sum_{d|n}g(d)\l">
-<meta property="og:updated_time" content="2017-08-27T06:55:48.000Z">
+<meta property="og:updated_time" content="2017-08-27T06:59:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反演魔术小结">
 <meta name="twitter:description" content="[TOC] 基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$  $gcd(i,j)$  f(n)=\sum_{d|n}g(d)\l">
@@ -139,14 +139,11 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <p>注意到我们对于任意一个 $k$， 考虑相当于枚举了 $n/k$ 个 $kd$ 计算 $\left \lfloor \frac{n}{kd} \right \rfloor \left \lfloor \frac{m}{kd} \right \rfloor$，乘上一个系数 $\mu(d)$。于是我们考虑求 $gcd(x,y) \in K$，可以枚举每一个元素 $k\in K$。求得一个新的系数 <script type="math/tex">f(x)=\sum_{d=x/k,k|x,k\in K} \mu(d), \sum_{d=1}^{n}f(d)\left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{m}{d} \right \rfloor</script>即是所求的值。</p>
 <p>于是我们可以筛出 $\mu(d)$，处理出每一个数的质因子数，然后在枚举每一个数 $k\in[1,n]$ 处理出所有的 $f(x)$，并做一个二维前缀和，这部分复杂度是 $O(n\log n)$。 后面就跟常规的处理方式一样了，分块加速$O(\sqrt(n)+\sqrt(m))$。</p>
 <p>复杂度 $O(n\log n+Q(\sqrt n+\sqrt m))$</p>
-<h2 id="D-GCD-of-Sequence-HDU-4675"><a href="#D-GCD-of-Sequence-HDU-4675" class="headerlink" title="D. GCD of Sequence (HDU 4675)"></a>D. GCD of Sequence (HDU 4675)</h2><blockquote>
-<p>….. to be done… wait a minite….</p>
-</blockquote>
-
+<h2 id="D-GCD-of-Sequence-HDU-4675"><a href="#D-GCD-of-Sequence-HDU-4675" class="headerlink" title="D. GCD of Sequence (HDU 4675)"></a>D. GCD of Sequence (HDU 4675)</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6udsiij00038mi4g4bboxrj" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6uegvuk0003bni4nb7itf5o" class="article-share-link">Share</a>
       
       
     </footer>

@@ -164,14 +164,14 @@
 <li><code>CF 825C</code> 这个题。题意没有说明下取整，读题有毒。</li>
 <li><code>CF 825D</code> 其实就变成了计算 $s$ 中有多少个 $t$ 串，字符集不大，直接枚举。</li>
 <li><code>CF 825E</code> 倒序建图，直接拓扑序列标就行了，反证法证明。这种题做之前先证明一下比较好。</li>
-<li><code>CF 825F</code> 用 KMP 的 next 数组 dp。要注意一个结论，设前缀为 $e$ ，$|e| \equiv0\mod  |e| -next<em>{|e|} $ 时，这一段前缀其实是一个周期为 $e-next</em>{|e|}$ 的循环串。所以令 $f(i)$ 为前 $i$ 个字符的最短长度。直接对每一个后缀做一遍 KMP， $O(n)$ 转移就可以了。</li>
+<li><code>CF 825F</code> 用 KMP 的 next 数组 dp。要注意一个结论，设前缀为 $e$ ，$|e| \equiv0\mod  |e| -next_{|e|} $ 时，这一段前缀其实是一个周期为 $e-next_{|e|}$ 的循环串。所以令 $f(i)$ 为前 $i$ 个字符的最短长度。直接对每一个后缀做一遍 KMP， $O(n)$ 转移就可以了。</li>
 <li><code>CF 825G</code> 其实很容易想到，维护所有黑点形成的生成树上点的全局的最小值，询问的时候就将询问点到生成树的路径上的点与这个最小值取 $\min$ 。于是直接以第一个黑点为根，dfs 算一下每个节点到根节点路径上的最小值 $d_i$。询问就是将 $x$ 的 $d_x$ 与全局生成树的最小值取 $\min$，更新就是用 $d_x$ 来更新这个全局的最小值。 其实这个题反而很简单。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj6udsiim00058mi49jnl9fnv" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj6uegvum0005bni4iljwh6fh" class="article-share-link">Share</a>
       
       
     </footer>

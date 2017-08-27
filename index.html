@@ -140,14 +140,11 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <p>注意到我们对于任意一个 $k$， 考虑相当于枚举了 $n/k$ 个 $kd$ 计算 $\left \lfloor \frac{n}{kd} \right \rfloor \left \lfloor \frac{m}{kd} \right \rfloor$，乘上一个系数 $\mu(d)$。于是我们考虑求 $gcd(x,y) \in K$，可以枚举每一个元素 $k\in K$。求得一个新的系数 <script type="math/tex">f(x)=\sum_{d=x/k,k|x,k\in K} \mu(d), \sum_{d=1}^{n}f(d)\left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{m}{d} \right \rfloor</script>即是所求的值。</p>
 <p>于是我们可以筛出 $\mu(d)$，处理出每一个数的质因子数，然后在枚举每一个数 $k\in[1,n]$ 处理出所有的 $f(x)$，并做一个二维前缀和，这部分复杂度是 $O(n\log n)$。 后面就跟常规的处理方式一样了，分块加速$O(\sqrt(n)+\sqrt(m))$。</p>
 <p>复杂度 $O(n\log n+Q(\sqrt n+\sqrt m))$</p>
-<h2 id="D-GCD-of-Sequence-HDU-4675"><a href="#D-GCD-of-Sequence-HDU-4675" class="headerlink" title="D. GCD of Sequence (HDU 4675)"></a>D. GCD of Sequence (HDU 4675)</h2><blockquote>
-<p>….. to be done… wait a minite….</p>
-</blockquote>
-
+<h2 id="D-GCD-of-Sequence-HDU-4675"><a href="#D-GCD-of-Sequence-HDU-4675" class="headerlink" title="D. GCD of Sequence (HDU 4675)"></a>D. GCD of Sequence (HDU 4675)</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6udsiij00038mi4g4bboxrj" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6uegvuk0003bni4nb7itf5o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,14 +251,14 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <li><code>CF 825C</code> 这个题。题意没有说明下取整，读题有毒。</li>
 <li><code>CF 825D</code> 其实就变成了计算 $s$ 中有多少个 $t$ 串，字符集不大，直接枚举。</li>
 <li><code>CF 825E</code> 倒序建图，直接拓扑序列标就行了，反证法证明。这种题做之前先证明一下比较好。</li>
-<li><code>CF 825F</code> 用 KMP 的 next 数组 dp。要注意一个结论，设前缀为 $e$ ，$|e| \equiv0\mod  |e| -next<em>{|e|} $ 时，这一段前缀其实是一个周期为 $e-next</em>{|e|}$ 的循环串。所以令 $f(i)$ 为前 $i$ 个字符的最短长度。直接对每一个后缀做一遍 KMP， $O(n)$ 转移就可以了。</li>
+<li><code>CF 825F</code> 用 KMP 的 next 数组 dp。要注意一个结论，设前缀为 $e$ ，$|e| \equiv0\mod  |e| -next_{|e|} $ 时，这一段前缀其实是一个周期为 $e-next_{|e|}$ 的循环串。所以令 $f(i)$ 为前 $i$ 个字符的最短长度。直接对每一个后缀做一遍 KMP， $O(n)$ 转移就可以了。</li>
 <li><code>CF 825G</code> 其实很容易想到，维护所有黑点形成的生成树上点的全局的最小值，询问的时候就将询问点到生成树的路径上的点与这个最小值取 $\min$ 。于是直接以第一个黑点为根，dfs 算一下每个节点到根节点路径上的最小值 $d_i$。询问就是将 $x$ 的 $d_x$ 与全局生成树的最小值取 $\min$，更新就是用 $d_x$ 来更新这个全局的最小值。 其实这个题反而很简单。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj6udsiim00058mi49jnl9fnv" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj6uegvum0005bni4iljwh6fh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,7 +310,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj6udsiih00028mi4kt1lwv5z" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj6uegvui0002bni4av7ok2kx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +366,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj6udsiik00048mi4sw599kou" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj6uegvuk0004bni40vadap1t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -456,7 +453,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj6udsiib00008mi49i60lv33" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj6uegvuc0000bni4h2dq21fk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -618,7 +615,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <li><code>CF 776B</code> 质数染1，其他染2。</li>
 <li><code>CF 776A</code> 喵喵喵？</li>
 <li><code>CF 768F</code> 计数。分别统计合法和全部的情况，使用隔板法分别求解就可以了。</li>
-<li><code>CF 768E</code> SG。可以暴力算SG，复杂度证明相当于求$60$的不同数的划分，dp算算大概8e6左右？(谢谢qls)；注意某一堆石子数字介于$\sum<em>{i=1}^{p}i$与$\sum</em>{i=1}^{p+1}i$之间的数最多能取$p$次，而每次选取都可以使得该堆石子能继续被选取的次数为$1,2,\cdots,p-1$之间的任何一个数，这与SG函数的定义相符，于是这个石子数的SG值即为$p$，可以$O(n)$计算。</li>
+<li><code>CF 768E</code> SG。可以暴力算SG，复杂度证明相当于求$60$的不同数的划分，dp算算大概8e6左右？(谢谢qls)；注意某一堆石子数字介于$\sum_{i=1}^{p}i$与$\sum_{i=1}^{p+1}i$之间的数最多能取$p$次，而每次选取都可以使得该堆石子能继续被选取的次数为$1,2,\cdots,p-1$之间的任何一个数，这与SG函数的定义相符，于是这个石子数的SG值即为$p$，可以$O(n)$计算。</li>
 <li><code>CF 768D</code> dp。$dp(i,j)$表示第$i$天凑齐了$j$种球的概率。转移很自然。</li>
 <li><code>CF 768C</code> 暴力。注意到$a$和$x$很小，异或操作的所有值都在$2^{10}$内，一个$O(2^{10}k)$的大暴力。</li>
 <li><code>CF 768B</code> 分治|树的性质。注意到$n$是由两侧的$\left\lfloor n/2 \right\rfloor$和$n%2$组成，所以可以分治。注意到其实整个过程构成了一棵完全二叉树，按照中序遍历的顺序标号，深度为$i$的节点的值为$(n&gt;&gt;j)\&amp;1$，类似树状数组的编号性质，某节点所位于的层级可以通过编号的$lowbit$快速得到。因此可以暴力枚举每一位的值。</li>
@@ -634,7 +631,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <li><code>CF 766B</code> 排个序判断相邻3个数。</li>
 <li><code>CF 766C</code> dp&amp;前缀和。利用前缀和可以在$O(\Sigma)$快速计算某一段子串是否合法。很容易得到$O(\Sigma n^2)$的dp。计算最长子串同样可以在$O(\Sigma n^2)$下得到，当然也可以直接并入前面的dp中，最少切分可以通过$O(\Sigma n)$ 贪心得到。</li>
 <li><code>CF 766D</code> 并查集。每个字符建立两个节点：分别表示该字符的正和反。如果两个词是相同的则将两个词的正和反分别合并，反之将其交叉合并。正反同时在同一个集合则矛盾。</li>
-<li><code>CF 766E</code> 拆位&amp;树dp&amp;dfs。求区间异或值的和通常需要用到拆位。随意选取一个根，通过各个节点到根的前缀异或和，维护每个节点及其的子孙的前缀异或和拆位后的每一位个数。利用中序dfs可以一次性求出每个节点为根的子树中所有路径的异或值的和。$O(n\log{max{a_i}})$。</li>
+<li><code>CF 766E</code> 拆位&amp;树dp&amp;dfs。求区间异或值的和通常需要用到拆位。随意选取一个根，通过各个节点到根的前缀异或和，维护每个节点及其的子孙的前缀异或和拆位后的每一位个数。利用中序dfs可以一次性求出每个节点为根的子树中所有路径的异或值的和。$O(n\log{max\{a_i\}})$。</li>
 <li><code>CF 762A</code> 求因数，小心平方时爆ll。</li>
 <li><code>CF 762B</code> 水贪心。</li>
 <li><code>CF 762C</code> 观察到只能删除中间的一段，使得两头合并后成为子序列。因此正着反着分别处理一遍子序列在原串中对应的最远的位置。然后枚举一端，二分找另一端，更新答案就可以了。</li>
@@ -654,7 +651,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <h2 id="2017-2-2"><a href="#2017-2-2" class="headerlink" title="2017-2-2"></a>2017-2-2</h2><ul>
 <li><code>POJ 3494</code> 栈。求最大全$1$子矩阵。</li>
 <li><code>SPOJ MINSUB</code> 栈&amp;二分。二分矩阵中的最小值，按照与当前处理的最小值数字的关系将矩阵处理成<code>01</code>矩阵。之后利用求最大全$1$子矩阵的方法。</li>
-<li><code>SPOJ INTSUB</code> 组合计数。枚举$a$，可以得到候选的$b$的个数$b<em>a$和比$a$大但是不能整除$a$的数字个数$c_a$，答案是$\sum</em>{a=1}^{2n}(2^{b_a}-1)2^{c_a}$，边算边取模。</li>
+<li><code>SPOJ INTSUB</code> 组合计数。枚举$a$，可以得到候选的$b$的个数$b_a$和比$a$大但是不能整除$a$的数字个数$c_a$，答案是$\sum_{a=1}^{2n}(2^{b_a}-1)2^{c_a}$，边算边取模。</li>
 </ul>
 <h2 id="2017-1-31"><a href="#2017-1-31" class="headerlink" title="2017-1-31"></a>2017-1-31</h2><ul>
 <li><code>CF 756C</code> 线段树。注意到每次询问时答案应当是<code>push</code>操作数等于<code>pop</code>操作数后的第一个<code>push</code>。因此考虑一个后缀和，每次<code>push</code>操作，将$1$到当前位置的区间$+1$，<code>pop</code>则$-1$，每个节点维护当前区间的最大值。查找时只需要沿着最大值大于$0$的线路一路向右节点走即可。</li>
@@ -663,7 +660,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
 <li><code>CF 761C</code> 瞎暴力。</li>
 <li><code>CF 761D</code> 瞎贪心。</li>
 <li><code>CF 761E</code> 构造。当项数有限时，$\sum_{i&lt;0}2^i &lt; 1$，所以选取一个2的幂次作步长，每一步都除以$2$。永远都不会交。</li>
-<li><code>SPOJ UCV2013E</code> 组合数。套路题？答案是$C(n,x<em>1)C(n-x_1,x_2)\cdots C(n-x_1-x_2-\cdots-x</em>{n-1},x_n)$。组合数比较小，模数是质数$1e9+7$，直接预处理阶乘和逆元即可。</li>
+<li><code>SPOJ UCV2013E</code> 组合数。套路题？答案是$C(n,x_1)C(n-x_1,x_2)\cdots C(n-x_1-x_2-\cdots-x_{n-1},x_n)$。组合数比较小，模数是质数$1e9+7$，直接预处理阶乘和逆元即可。</li>
 <li><code>POJ 3250</code> 栈。日本人书系列，经典单调栈的运用，求最近的比自己大（小）的值。</li>
 <li><code>POJ 2559</code> 栈。同上。</li>
 <li><code>POJ 2082</code> 栈。同上。</li>
@@ -715,7 +712,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj6udsiie00018mi4syls6qli" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj6uegvug0001bni4j47z4q20" class="article-share-link">Share</a>
       
       
     </footer>
