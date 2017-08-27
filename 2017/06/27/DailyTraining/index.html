@@ -58,7 +58,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://connorzhong.github.io"></form>
@@ -160,8 +160,8 @@
 <li><code>CF 193B*</code> 虽说是一个暴力出奇迹，卡了很久。需要有意识的注意常数技巧，同样的复杂度常数竟然差了近10倍直接TLE我也是很棒棒..？改了改后竟然还是差了5倍.. </li>
 <li><code>CF 803D</code> 二分。</li>
 <li><code>CF 803C</code> 枚举一下GCD，构造个自然数列乘一下。</li>
-<li><code>CF 803B</code> – </li>
-<li><code>CF 803A</code> –</li>
+<li><code>CF 803B</code> — </li>
+<li><code>CF 803A</code> —</li>
 <li><code>POJ 1769</code> 线段树上的dp。</li>
 <li><code>CF 164A*</code> 上题之前应该多想想，这个题也是经典套路了，dfs直接做貌似很对实际上在图中存在SCC的时候会跪，正解应该是在反向图和正向图分别确定能到达的点。</li>
 <li><code>CF 522C*</code> 观察发现只有第一次$r_j = 1$ 的时候有影响，因此直接找出在$j$之后不在出现且能够满足的 $a_i$，剩下的直接判断可行性就可以了。</li>
@@ -255,7 +255,7 @@
 <h2 id="2017-2-2"><a href="#2017-2-2" class="headerlink" title="2017-2-2"></a>2017-2-2</h2><ul>
 <li><code>POJ 3494</code> 栈。求最大全$1$子矩阵。</li>
 <li><code>SPOJ MINSUB</code> 栈&amp;二分。二分矩阵中的最小值，按照与当前处理的最小值数字的关系将矩阵处理成<code>01</code>矩阵。之后利用求最大全$1$子矩阵的方法。</li>
-<li><code>SPOJ INTSUB</code> 组合计数。枚举$a$，可以得到候选的$b$的个数$b_a$和比$a$大但是不能整除$a$的数字个数$c<em>a$，答案是$\sum</em>{a=1}^{2n}(2^{b_a}-1)2^{c_a}$，边算边取模。</li>
+<li><code>SPOJ INTSUB</code> 组合计数。枚举$a$，可以得到候选的$b$的个数$b<em>a$和比$a$大但是不能整除$a$的数字个数$c_a$，答案是$\sum</em>{a=1}^{2n}(2^{b_a}-1)2^{c_a}$，边算边取模。</li>
 </ul>
 <h2 id="2017-1-31"><a href="#2017-1-31" class="headerlink" title="2017-1-31"></a>2017-1-31</h2><ul>
 <li><code>CF 756C</code> 线段树。注意到每次询问时答案应当是<code>push</code>操作数等于<code>pop</code>操作数后的第一个<code>push</code>。因此考虑一个后缀和，每次<code>push</code>操作，将$1$到当前位置的区间$+1$，<code>pop</code>则$-1$，每个节点维护当前区间的最大值。查找时只需要沿着最大值大于$0$的线路一路向右节点走即可。</li>
@@ -264,7 +264,7 @@
 <li><code>CF 761C</code> 瞎暴力。</li>
 <li><code>CF 761D</code> 瞎贪心。</li>
 <li><code>CF 761E</code> 构造。当项数有限时，$\sum_{i&lt;0}2^i &lt; 1$，所以选取一个2的幂次作步长，每一步都除以$2$。永远都不会交。</li>
-<li><code>SPOJ UCV2013E</code> 组合数。套路题？答案是$C(n,x_1)C(n-x_1,x_2)\cdots C(n-x_1-x<em>2-\cdots-x</em>{n-1},x_n)$。组合数比较小，模数是质数$1e9+7$，直接预处理阶乘和逆元即可。</li>
+<li><code>SPOJ UCV2013E</code> 组合数。套路题？答案是$C(n,x<em>1)C(n-x_1,x_2)\cdots C(n-x_1-x_2-\cdots-x</em>{n-1},x_n)$。组合数比较小，模数是质数$1e9+7$，直接预处理阶乘和逆元即可。</li>
 <li><code>POJ 3250</code> 栈。日本人书系列，经典单调栈的运用，求最近的比自己大（小）的值。</li>
 <li><code>POJ 2559</code> 栈。同上。</li>
 <li><code>POJ 2082</code> 栈。同上。</li>
@@ -316,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj6tkumgc0004wki4ra337u20" class="article-share-link">Delen</a>
+      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj6ud6jxz000277i4felisvx0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,7 +326,7 @@
 <nav id="article-nav">
   
     <a href="/2017/07/02/CF-泛做计划/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nieuwer</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           CF 泛做计划
@@ -354,7 +354,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
@@ -364,7 +364,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         

@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://connorzhong.github.io/2017/08/25/反演魔术小结/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
 <meta property="og:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)   \leftri">
-<meta property="og:updated_time" content="2017-08-26T17:25:12.000Z">
+<meta property="og:updated_time" content="2017-08-27T05:02:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反演魔术小结">
 <meta name="twitter:description" content="基本套路算法竞赛中常见的反演套路，主要是围绕两个函数展开。  莫比乌斯函数 $\mu(x)$. 欧拉函数 $\varphi(x)$.  以及两个函数的两个性质。  $\sum_{d|n} \mu(d) =[n=1]$  $\sum_{d|n} \varphi(d) = n$  常见套路  $[gcd(i,j)=k]$ $gcd(i,j)$ $f(n)=\sum{d|n}g(d)   \leftri">
@@ -58,7 +58,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://connorzhong.github.io"></form>
@@ -114,11 +114,20 @@
 <h2 id="A-Visible-Lattice-Points-SPOJ-VLATTICE"><a href="#A-Visible-Lattice-Points-SPOJ-VLATTICE" class="headerlink" title="A. Visible Lattice Points (SPOJ VLATTICE)"></a>A. Visible Lattice Points (SPOJ VLATTICE)</h2><blockquote>
 <p>给出一个三维立方网格，坐标范围均为 $0$ 到 $N$。求从 $(0,0,0)$ 位置能够没有阻挡地看到的格点数目，$T$ 组数据。$N\leq 10^6, T\leq 50$。  </p>
 </blockquote>
-<p>考虑点 $(x,y,z)$ 与 $(0,0,0)$ 之间的格点个数为 $gcd(x,y,z)-1$，因此题目转化为求 $gcd(x,y,z) =1$ 的三元组数。<br>$$<br>ans=\sum<em>{x=0}^{n}\sum</em>{y=0}^{n}\sum<em>{z=0}^{n}[gcd(x,y,z)=1]\=\sum</em>{x=0}^{n}\sum<em>{y=0}^{n}\sum</em>{z=0}^{n}\sum<em>{d|gcd(x,y,z)} \mu(d)\=\sum</em>{x=0}^{n}\sum<em>{y=0}^{n}\sum</em>{z=0}^{n}\sum<em>{d|x,d|y,d|z} \mu(d)\<br>=\sum</em>{d=1}^{n}\mu(d)\sum<em>{id\leq n}\sum</em>{jd\leq n}\sum<em>{kd \leq n} 1\<br>=\sum</em>{d=1}^{n}\mu(d)\left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{n}{d} \right \rfloor<br>$$<br>由于 $\left \lfloor \frac{n}{d} \right \rfloor$ 最多只有 $\sqrt(n)$ 个取值，因此可以处理出 $\mu(d)$ 的前缀和，分块加速 $[n/i,n/(n/i)]$，总复杂度 $O(n+T\sqrt(n))$. 需要注意的是格点是从 $0$ 开始，答案还有些细节。</p>
+<p>考虑点 $(x,y,z)$ 与 $(0,0,0)$ 之间的格点个数为 $gcd(x,y,z)-1$，因此题目转化为求 $gcd(x,y,z) =1$ 的三元组数。</p>
+<script type="math/tex; mode=display">
+ans=\sum_{x=0}^{n}\sum_{y=0}^{n}\sum_{z=0}^{n}[gcd(x,y,z)=1]\\=\sum_{x=0}^{n}\sum_{y=0}^{n}\sum_{z=0}^{n}\sum_{d|gcd(x,y,z)} \mu(d)\\=\sum_{x=0}^{n}\sum_{y=0}^{n}\sum_{z=0}^{n}\sum_{d|x,d|y,d|z} \mu(d)\\
+=\sum_{d=1}^{n}\mu(d)\sum_{id\leq n}\sum_{jd\leq n}\sum_{kd \leq n} 1\\
+=\sum_{d=1}^{n}\mu(d)\left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{n}{d} \right \rfloor \left \lfloor \frac{n}{d} \right \rfloor</script><p>由于 $\left \lfloor \frac{n}{d} \right \rfloor$ 最多只有 $\sqrt(n)$ 个取值，因此可以处理出 $\mu(d)$ 的前缀和，分块加速 $[n/i,n/(n/i)]$，总复杂度 $O(n+T\sqrt(n))$. 需要注意的是格点是从 $0$ 开始，答案还有些细节。</p>
 <h2 id="B-GCD-HDU-1695"><a href="#B-GCD-HDU-1695" class="headerlink" title="B. GCD (HDU 1695)"></a>B. GCD (HDU 1695)</h2><blockquote>
 <p>给定两个区间，$x\in[1,n],y\in[1,m]$ 求 $gcd(x,y)=k$ 的有序对 $(x,y)$ 数，要求 $x\leq y$。数据组数  $T\leq 3000,1 \leq n,m,k\leq10^5$. </p>
 </blockquote>
-<p>不妨设 $n\leq m$.<br>$$<br>ans=\sum<em>{x=1}^{n}\sum</em>{y=x}^{m}[gcd(x,y)=k] \=\sum<em>{x=1}^{n/k}\sum</em>{y=x}^{m/k}[gcd(x,y)=1]\<br>=\sum<em>{d=1}^{n/k}\mu(d)\sum</em>{0&lt;id\leq n/k}\sum<em>{id \leq jd \leq m/k}1\<br>=\sum</em>{d=1}^{n/k}\mu(d)\sum<em>{0&lt;id\leq n/k}\sum</em>{id \leq jd \leq m/k}1\<br>=\sum_{d=1}^{n/k}\mu(d) (\left \lfloor \frac{m}{kd} \right \rfloor +  \left \lfloor \frac{m}{kd} \right \rfloor -\left \lfloor \frac{n}{kd} \right \rfloor)(\left \lfloor \frac{n}{kd} \right \rfloor)/2<br>$$<br>最后一步和式变换是注意到后面的平凡和式实际上相当于等差数列求和。同样可以对 $\left \lfloor \frac{m}{d} \right \rfloor$ 和 $\left \lfloor \frac{n}{d} \right \rfloor$ 进行分块加速。$O(n+T(\sqrt n+\sqrt m))$.</p>
+<p>不妨设 $n\leq m$.</p>
+<script type="math/tex; mode=display">
+ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}[gcd(x,y)=1]\\
+=\sum_{d=1}^{n/k}\mu(d)\sum_{0<id\leq n/k}\sum_{id \leq jd \leq m/k}1\\
+=\sum_{d=1}^{n/k}\mu(d)\sum_{0<id\leq n/k}\sum_{id \leq jd \leq m/k}1\\
+=\sum_{d=1}^{n/k}\mu(d) (\left \lfloor \frac{m}{kd} \right \rfloor +  \left \lfloor \frac{m}{kd} \right \rfloor -\left \lfloor \frac{n}{kd} \right \rfloor)(\left \lfloor \frac{n}{kd} \right \rfloor)/2</script><p>最后一步和式变换是注意到后面的平凡和式实际上相当于等差数列求和。同样可以对 $\left \lfloor \frac{m}{d} \right \rfloor$ 和 $\left \lfloor \frac{n}{d} \right \rfloor$ 进行分块加速。$O(n+T(\sqrt n+\sqrt m))$.</p>
 <h2 id="C-Mophues-HDU-4746"><a href="#C-Mophues-HDU-4746" class="headerlink" title="C. Mophues (HDU 4746)"></a>C. Mophues (HDU 4746)</h2><blockquote>
 <p>给 $n,m,p,Q$。 $Q$ 组询问，每组询问 $n,m,p$ 表示 $x\in[1,n],y\in[1,m]$，$gcd(x,y)$ 的分解质因数后的项数小于 $p$ 的有序数对个数. $n,m,p \leq 10^5,Q\leq 5000$. </p>
 </blockquote>
@@ -133,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6tkumg60001wki4btda5j0m" class="article-share-link">Delen</a>
+      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6ud6jxx000177i4raql5nfw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +153,7 @@
   
   
     <a href="/2017/07/20/每日CF计划/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">每日CF计划</div>
     </a>
   
@@ -167,7 +176,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
@@ -177,7 +186,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
