@@ -68,6 +68,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Cayley-公式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/02/Cayley-公式/" class="article-date">
+  <time datetime="2017-10-02T14:34:49.000Z" itemprop="datePublished">2017-10-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/02/Cayley-公式/">Cayley 公式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>训练的时候做了 ICPCCamp Day 8 rgn_58 Contest 4. 遇到了奇妙的 Cayley 公式，惨遭教做人，很努力的数了数也只找到 $O(n^2)$ 的做法。这类 Well-known Theory 还是需要慢慢积累的。</p>
+<p>特别鸣谢 <a href="http://www.matrix67.com/blog/archives/682" target="_blank" rel="external">matrix67 的blog</a></p>
+<p>Cayley 公式大致说了这么个事：一个 $k$ 阶完全图 $G_k$ 有 $n^{n-2}$ 个不同的生成树，换句话说就是 $k$ 个带标号节点所能形成的带标号无根树的个数有 $n^{n-2}$ 个。</p>
+<p>一个非常简易的证明是通过 Prüfer 编码来进行证明，这是一种对带标号无根树的编码方式。</p>
+<ul>
+<li>Prüfer 编码：取一棵含有 $n$ 个节点的无根树，选取当前所有叶子节点中编号最小的节点，将该节点和它所连接的边从树中删除，将该节点的父亲节点的编号记录下来，接着递归地将这个操作做下去，直到只剩最后 $2$ 个节点。这样得到的长度为 $n-2$ 的编码就是 Prüfer 编码。根据定义很容易发现每一棵树都唯一对应了一个 Prüfer 编码。编码中还可以得到一个性质，编码中某个标号 $v$ 出现的次数，就是这个节点的度数 $degree(v)-1$ 。叶子节点不会出现在编码中。</li>
+<li>每个 Prüfer 编码也唯一对应着一棵无根树。考虑当前的长度为 $n-2$ 的编码，编码中未出现过的节点中标号最小的即是第一个被编码的节点，其父亲节点是第一位编码，然后递归的考虑后 $n-1$ 位编码，不再考虑已经被还原的节点，最后两个没被还原的节点相连，于是可以还原出整棵树。 </li>
+</ul>
+<p>由于长度 $n-2$ 的 Prüfer 编码共计 $n^{n -2}$ 个，因此 $k$ 个带标号节点所能形成的带标号无根树的个数有 $n^{n-2}$ 个。</p>
+<p>由于 Prüfer 编码的方式可以轻易扩展出，当各个节点的度为 $degree(v)$ 时，无根树的个数。</p>
+<script type="math/tex; mode=display">
+A =\frac{(n-2)!}{\prod (degree(v)-1)!}</script><p>相关题目</p>
+<h3 id="2015-2016-Petrozavodsk-Winter-Training-Camp-Makoto-rng-58-Soejima-Сontest-4-J-Ropes"><a href="#2015-2016-Petrozavodsk-Winter-Training-Camp-Makoto-rng-58-Soejima-Сontest-4-J-Ropes" class="headerlink" title="2015-2016 Petrozavodsk Winter Training Camp, Makoto rng_58 Soejima Сontest 4 J. Ropes"></a><a href="http://codeforces.com/gym/100959" target="_blank" rel="external">2015-2016 Petrozavodsk Winter Training Camp, Makoto rng_58 Soejima Сontest 4</a> J. Ropes</h3><blockquote>
+<p>给出 $N$ 个节点的度数 $a_i$ ，求形成的不同的无根树的个数。</p>
+<p>$N \leq 10^5, 1\leq a_i \leq 3$ </p>
+</blockquote>
+<p>直接用公式求就好了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://connorzhong.github.io/2017/10/02/Cayley-公式/" data-id="cj8abkulh000045i4nqdrrv9r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-反演魔术小结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/25/反演魔术小结/" class="article-date">
@@ -167,7 +220,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj6ui77x10003evi41yd798q1" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/08/25/反演魔术小结/" data-id="cj8abkulm000145i4220tdsgs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +334,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj6ui77x30005evi49j0tfqft" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj8abkulv000645i4jpgj2bwo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,7 +386,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj6ui77wy0001evi4xnw5ij2j" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj8abkuln000245i4s90wgc36" class="article-share-link">Share</a>
       
       
     </footer>
@@ -389,7 +442,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj6ui77x20004evi4uo6limwy" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/03/挑战程序设计竞赛/" data-id="cj8abkulu000545i46e5zqgxw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +529,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj6ui77wu0000evi4d63qjqwv" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/02/CF-泛做计划/" data-id="cj8abkulp000445i4hqevnvgh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -735,7 +788,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj6ui77x00002evi4m6apb71i" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/06/27/DailyTraining/" data-id="cj8abkulp000345i4u08f6t44" class="article-share-link">Share</a>
       
       
     </footer>
@@ -762,7 +815,7 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
   </div>
 
@@ -773,6 +826,10 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/02/Cayley-公式/">Cayley 公式</a>
+          </li>
         
           <li>
             <a href="/2017/08/25/反演魔术小结/">反演魔术小结</a>
@@ -788,10 +845,6 @@ ans=\sum_{x=1}^{n}\sum_{y=x}^{m}[gcd(x,y)=k] \\=\sum_{x=1}^{n/k}\sum_{y=x}^{m/k}
         
           <li>
             <a href="/2017/07/03/挑战程序设计竞赛/">挑战程序设计竞赛</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/02/CF-泛做计划/">CF 泛做计划</a>
           </li>
         
       </ul>

@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Leetcode Contests | ConnorZhong is weak</title>
+  <title>Cayley 公式 | ConnorZhong is weak</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做了多少。 Contests： $2$ Problems：$8$  Leetcode Weekly Contest 41 (4/4) Done Leetcode 636 输入比较恶心。拿个栈记录模拟下调用。 Leetcode 642 发现最近 Leetcode 出了一些这种类似于工程项目的题，感觉挺无趣的，没什么脑子 xjb 调 map 和 string 的库。 Leetcode 643 第一眼看">
+  <meta name="description" content="训练的时候做了 ICPCCamp Day 8 rgn_58 Contest 4. 遇到了奇妙的 Cayley 公式，惨遭教做人，很努力的数了数也只找到 $O(n^2)$ 的做法。这类 Well-known Theory 还是需要慢慢积累的。 特别鸣谢 matrix67 的blog Cayley 公式大致说了这么个事：一个 $k$ 阶完全图 $G_k$ 有 $n^{n-2}$ 个不同的生成树，换句话">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode Contests">
-<meta property="og:url" content="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/index.html">
+<meta property="og:title" content="Cayley 公式">
+<meta property="og:url" content="http://connorzhong.github.io/2017/10/02/Cayley-公式/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
-<meta property="og:description" content="做了多少。 Contests： $2$ Problems：$8$  Leetcode Weekly Contest 41 (4/4) Done Leetcode 636 输入比较恶心。拿个栈记录模拟下调用。 Leetcode 642 发现最近 Leetcode 出了一些这种类似于工程项目的题，感觉挺无趣的，没什么脑子 xjb 调 map 和 string 的库。 Leetcode 643 第一眼看">
-<meta property="og:updated_time" content="2017-07-18T17:24:24.000Z">
+<meta property="og:description" content="训练的时候做了 ICPCCamp Day 8 rgn_58 Contest 4. 遇到了奇妙的 Cayley 公式，惨遭教做人，很努力的数了数也只找到 $O(n^2)$ 的做法。这类 Well-known Theory 还是需要慢慢积累的。 特别鸣谢 matrix67 的blog Cayley 公式大致说了这么个事：一个 $k$ 阶完全图 $G_k$ 有 $n^{n-2}$ 个不同的生成树，换句话">
+<meta property="og:updated_time" content="2017-10-02T15:17:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode Contests">
-<meta name="twitter:description" content="做了多少。 Contests： $2$ Problems：$8$  Leetcode Weekly Contest 41 (4/4) Done Leetcode 636 输入比较恶心。拿个栈记录模拟下调用。 Leetcode 642 发现最近 Leetcode 出了一些这种类似于工程项目的题，感觉挺无趣的，没什么脑子 xjb 调 map 和 string 的库。 Leetcode 643 第一眼看">
+<meta name="twitter:title" content="Cayley 公式">
+<meta name="twitter:description" content="训练的时候做了 ICPCCamp Day 8 rgn_58 Contest 4. 遇到了奇妙的 Cayley 公式，惨遭教做人，很努力的数了数也只找到 $O(n^2)$ 的做法。这类 Well-known Theory 还是需要慢慢积累的。 特别鸣谢 matrix67 的blog Cayley 公式大致说了这么个事：一个 $k$ 阶完全图 $G_k$ 有 $n^{n-2}$ 个不同的生成树，换句话">
   
     <link rel="alternate" href="/atom.xml" title="ConnorZhong is weak" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Leetcode-Contests" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Cayley-公式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/07/19/Leetcode-Contests/" class="article-date">
-  <time datetime="2017-07-18T17:00:00.000Z" itemprop="datePublished">2017-07-19</time>
+    <a href="/2017/10/02/Cayley-公式/" class="article-date">
+  <time datetime="2017-10-02T14:34:49.000Z" itemprop="datePublished">2017-10-02</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode Contests
+      Cayley 公式
     </h1>
   
 
@@ -89,27 +89,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="做了多少。"><a href="#做了多少。" class="headerlink" title="做了多少。"></a>做了多少。</h2><ul>
-<li>Contests： $2$</li>
-<li>Problems：$8$</li>
+        <p>训练的时候做了 ICPCCamp Day 8 rgn_58 Contest 4. 遇到了奇妙的 Cayley 公式，惨遭教做人，很努力的数了数也只找到 $O(n^2)$ 的做法。这类 Well-known Theory 还是需要慢慢积累的。</p>
+<p>特别鸣谢 <a href="http://www.matrix67.com/blog/archives/682" target="_blank" rel="external">matrix67 的blog</a></p>
+<p>Cayley 公式大致说了这么个事：一个 $k$ 阶完全图 $G_k$ 有 $n^{n-2}$ 个不同的生成树，换句话说就是 $k$ 个带标号节点所能形成的带标号无根树的个数有 $n^{n-2}$ 个。</p>
+<p>一个非常简易的证明是通过 Prüfer 编码来进行证明，这是一种对带标号无根树的编码方式。</p>
+<ul>
+<li>Prüfer 编码：取一棵含有 $n$ 个节点的无根树，选取当前所有叶子节点中编号最小的节点，将该节点和它所连接的边从树中删除，将该节点的父亲节点的编号记录下来，接着递归地将这个操作做下去，直到只剩最后 $2$ 个节点。这样得到的长度为 $n-2$ 的编码就是 Prüfer 编码。根据定义很容易发现每一棵树都唯一对应了一个 Prüfer 编码。编码中还可以得到一个性质，编码中某个标号 $v$ 出现的次数，就是这个节点的度数 $degree(v)-1$ 。叶子节点不会出现在编码中。</li>
+<li>每个 Prüfer 编码也唯一对应着一棵无根树。考虑当前的长度为 $n-2$ 的编码，编码中未出现过的节点中标号最小的即是第一个被编码的节点，其父亲节点是第一位编码，然后递归的考虑后 $n-1$ 位编码，不再考虑已经被还原的节点，最后两个没被还原的节点相连，于是可以还原出整棵树。 </li>
 </ul>
-<h2 id="Leetcode-Weekly-Contest-41-4-4-Done"><a href="#Leetcode-Weekly-Contest-41-4-4-Done" class="headerlink" title="Leetcode Weekly Contest 41 (4/4) Done"></a>Leetcode Weekly Contest 41 (4/4) Done</h2><ul>
-<li><code>Leetcode 636</code> 输入比较恶心。拿个栈记录模拟下调用。</li>
-<li><code>Leetcode 642</code> 发现最近 Leetcode 出了一些这种类似于工程项目的题，感觉挺无趣的，没什么脑子 xjb 调 map 和 string 的库。</li>
-<li><code>Leetcode 643</code> 第一眼看上去感觉好难啊，然后发现 $k$ tmd竟然是固定的？？</li>
-<li><code>Leetcode 644</code> 考虑二分答案。相当于给定平均值 $a$ 去查有没有这样一段。然后考虑序列 $a[i]-a$，求和最大的部分是否大于等于 $0$。于是拿个双指针，每次 $j - i \geq k$ 时，一旦 $i$ 到头部的和小于 $0$，就把头砍去，同时维护遇到的区间最值。</li>
-</ul>
-<h2 id="Leetcode-Weekly-Contest-37-4-4-Done"><a href="#Leetcode-Weekly-Contest-37-4-4-Done" class="headerlink" title="Leetcode Weekly Contest 37 (4/4) Done"></a>Leetcode Weekly Contest 37 (4/4) <strong>Done</strong></h2><ul>
-<li><code>Leetcode 621</code> 容易想到时间长度至少与最多的任务所需的时间相匹配，其他的任务总是可以通过调整间距塞进空隙。所以只要求出最多的任务，和并列最多的任务种类数就可以了。</li>
-<li><code>Leetcode 623</code> 水。</li>
-<li><code>Leetcode 624</code> 把最大的两个数找出来，最小的两个数找出来。</li>
-<li><code>Leetcode 625</code> 分解质因数，因为每个位不能超过 $9$，把质因数从大到小贪心组合一下，注意细节。</li>
-</ul>
+<p>由于长度 $n-2$ 的 Prüfer 编码共计 $n^{n -2}$ 个，因此 $k$ 个带标号节点所能形成的带标号无根树的个数有 $n^{n-2}$ 个。</p>
+<p>由于 Prüfer 编码的方式可以轻易扩展出，当各个节点的度为 $degree(v)$ 时，无根树的个数。</p>
+<script type="math/tex; mode=display">
+A =\frac{(n-2)!}{\prod (degree(v)-1)!}</script><p>相关题目</p>
+<h3 id="2015-2016-Petrozavodsk-Winter-Training-Camp-Makoto-rng-58-Soejima-Сontest-4-J-Ropes"><a href="#2015-2016-Petrozavodsk-Winter-Training-Camp-Makoto-rng-58-Soejima-Сontest-4-J-Ropes" class="headerlink" title="2015-2016 Petrozavodsk Winter Training Camp, Makoto rng_58 Soejima Сontest 4 J. Ropes"></a><a href="http://codeforces.com/gym/100959" target="_blank" rel="external">2015-2016 Petrozavodsk Winter Training Camp, Makoto rng_58 Soejima Сontest 4</a> J. Ropes</h3><blockquote>
+<p>给出 $N$ 个节点的度数 $a_i$ ，求形成的不同的无根树的个数。</p>
+<p>$N \leq 10^5, 1\leq a_i \leq 3$ </p>
+</blockquote>
+<p>直接用公式求就好了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/19/Leetcode-Contests/" data-id="cj8abkuln000245i4s90wgc36" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/10/02/Cayley-公式/" data-id="cj8abkulh000045i4nqdrrv9r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -118,19 +119,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/20/每日CF计划/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          每日CF计划
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/03/挑战程序设计竞赛/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/25/反演魔术小结/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">挑战程序设计竞赛</div>
+      <div class="article-nav-title">反演魔术小结</div>
     </a>
   
 </nav>
