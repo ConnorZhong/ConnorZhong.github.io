@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>网络流学习 | ConnorZhong is weak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于网络流题目POJ 3041 给出二维坐标上的 $N$ 个点， $x,y$ 轴上可以选取点，覆盖对应的一行或者一列，要求选取最少的点覆盖所有的点。  把点看作边，$x$, $y$ 轴看作点，则是一个二分图。这就变成了二分图的最小顶点覆盖，等价最大匹配。 POJ 3057 给一个二维平面，每个点可能是墙，空，或者门。每个空格子上都有一个人。每个门一秒只能通过一个人，空格上无限制。要求所有人都从某一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络流学习">
+<meta property="og:url" content="http://connorzhong.github.io/2017/10/24/网络流学习/index.html">
+<meta property="og:site_name" content="ConnorZhong is weak">
+<meta property="og:description" content="关于网络流题目POJ 3041 给出二维坐标上的 $N$ 个点， $x,y$ 轴上可以选取点，覆盖对应的一行或者一列，要求选取最少的点覆盖所有的点。  把点看作边，$x$, $y$ 轴看作点，则是一个二分图。这就变成了二分图的最小顶点覆盖，等价最大匹配。 POJ 3057 给一个二维平面，每个点可能是墙，空，或者门。每个空格子上都有一个人。每个门一秒只能通过一个人，空格上无限制。要求所有人都从某一">
+<meta property="og:updated_time" content="2017-10-24T18:16:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络流学习">
+<meta name="twitter:description" content="关于网络流题目POJ 3041 给出二维坐标上的 $N$ 个点， $x,y$ 轴上可以选取点，覆盖对应的一行或者一列，要求选取最少的点覆盖所有的点。  把点看作边，$x$, $y$ 轴看作点，则是一个二分图。这就变成了二分图的最小顶点覆盖，等价最大匹配。 POJ 3057 给一个二维平面，每个点可能是墙，空，或者门。每个空格子上都有一个人。每个门一秒只能通过一个人，空格上无限制。要求所有人都从某一">
+  
+    <link rel="alternate" href="/atom.xml" title="ConnorZhong is weak" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ConnorZhong is weak</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">team wiki &quot;https://wiki-resuscitated-hope.icpc-camp.org&quot;</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://connorzhong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-网络流学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/24/网络流学习/" class="article-date">
+  <time datetime="2017-10-24T15:38:46.000Z" itemprop="datePublished">2017-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网络流学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="关于网络流"><a href="#关于网络流" class="headerlink" title="关于网络流"></a>关于网络流</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="POJ-3041"><a href="#POJ-3041" class="headerlink" title="POJ 3041"></a>POJ 3041</h3><blockquote>
+<p>给出二维坐标上的 $N$ 个点， $x,y$ 轴上可以选取点，覆盖对应的一行或者一列，要求选取最少的点覆盖所有的点。</p>
+</blockquote>
+<p>把点看作边，$x$, $y$ 轴看作点，则是一个二分图。这就变成了二分图的最小顶点覆盖，等价最大匹配。</p>
+<h3 id="POJ-3057"><a href="#POJ-3057" class="headerlink" title="POJ 3057"></a>POJ 3057</h3><blockquote>
+<p>给一个二维平面，每个点可能是墙，空，或者门。每个空格子上都有一个人。每个门一秒只能通过一个人，空格上无限制。要求所有人都从某一个门中出去的最短时间。</p>
+</blockquote>
+<ol>
+<li>把每扇门的每个时间和每一个人作为节点。对人连可以跑出去的每个门每个时间连边。二分一个逃出的时间，跑二分图匹配，判断每个人是否都逃出。</li>
+<li>更优秀的做法是，每次让时间递增 $1$，每次直接在上一步的原图上继续增广。</li>
+</ol>
+<h3 id="POJ-3281"><a href="#POJ-3281" class="headerlink" title="POJ 3281"></a>POJ 3281</h3><blockquote>
+<p>给了若干饮料和食品，各种都只有一份，每个牛有各自的喜欢，最多有多少牛可以同时得到喜欢的食品饮料</p>
+</blockquote>
+<p>对牛拆点，因为每头牛只能产生 $1$ 贡献。然后饮料和食品分别作为两头连边。最大流。</p>
+<h3 id="POJ-3469"><a href="#POJ-3469" class="headerlink" title="POJ 3469"></a>POJ 3469</h3><blockquote>
+<p>给若干任务，每个任务要么选 A 要么选 B，分别有不同代价，其中某两个任务选取不同的选项时会产生额外代价，求最小代价。</p>
+</blockquote>
+<p>每个任务对 $A$ 和 $B$ 分别连边，冲突的任务之间连边。最小割</p>
+<h3 id="POJ-2135"><a href="#POJ-2135" class="headerlink" title="POJ 2135"></a>POJ 2135</h3><blockquote>
+<p>在图上通过某两个点的不重复边的最小环路</p>
+</blockquote>
+<p>跑流量为 $2$ 的最小费用流</p>
+<h3 id="POJ-2175"><a href="#POJ-2175" class="headerlink" title="POJ 2175"></a>POJ 2175</h3><blockquote>
+<p>给一个二维坐标图，某些点有 $B_i$ 个人，某些点可以容纳 $C_j$ 人。给出一个计划，每个人到都能到目标点的方案，问当前方案是否是最优（每个人路程和最小），每个人到某个点的路程是曼哈顿距离+1，否则给出一个更优。</p>
+</blockquote>
+<p>直接跑最小费用流是无法通过这个题的。</p>
+<p>在构造残余网络，图上消负圈。</p>
+<h3 id="POJ-3686"><a href="#POJ-3686" class="headerlink" title="POJ 3686"></a>POJ 3686</h3><blockquote>
+<p>给若干个玩具若干个工厂，每个玩具在一个工厂加工需要 $Z_{ij}$ 的时间，每个工厂同时只能造一个玩具。问最小化总时间。</p>
+</blockquote>
+<p>相当于每个玩具按照顺位需要消耗 $1$ 到 $n$ 倍的时间。每个工厂可以看作多个可以做一个玩具的工厂。连边跑费用流。</p>
+<hr>
+<p>模版：</p>
+<h2 id="1-最大流最小割"><a href="#1-最大流最小割" class="headerlink" title="1. 最大流最小割"></a>1. 最大流最小割</h2><p>$O(EV^2)$ 的 dinic 算法。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">namespace</span> dinic &#123;</div><div class="line">	<span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</div><div class="line">	<span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1005</span>;</div><div class="line">	<span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">100005</span>;</div><div class="line">	<span class="keyword">int</span> S,T;</div><div class="line">	<span class="keyword">int</span> ecnt,head[MAXN],cur[MAXN];</div><div class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">arc</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> v, c, nxt;</div><div class="line">	&#125; edge[MAXM];</div><div class="line">	<span class="keyword">int</span> d[MAXN], q[MAXN];</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="keyword">inline</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> c)</span></span></div><div class="line">	&#123;</div><div class="line">		edge[ecnt]=(arc)&#123;v,c,head[u]&#125;; head[u]=ecnt++;</div><div class="line">		edge[ecnt]=(arc)&#123;u,<span class="number">0</span>,head[v]&#125;; head[v]=ecnt++;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">BFS</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="built_in">memset</span>(d,<span class="number">-1</span>,<span class="keyword">sizeof</span> d);</div><div class="line">		<span class="keyword">int</span> top=<span class="number">0</span>,bot=<span class="number">0</span>;</div><div class="line">		q[bot++]=S;d[S]=<span class="number">0</span>;</div><div class="line"></div><div class="line">		<span class="keyword">while</span>(top!=bot)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">int</span> x = q[top++];</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=head[x];~j;j=edge[j].nxt)</div><div class="line">			&#123;</div><div class="line">				<span class="keyword">int</span> v=edge[j].v;</div><div class="line">				<span class="keyword">if</span> (d[v]==<span class="number">-1</span> &amp;&amp; edge[j].c) </div><div class="line">				&#123;</div><div class="line">					d[v]=d[x]+<span class="number">1</span>;</div><div class="line">					q[bot++]=v;</div><div class="line">					<span class="keyword">if</span> (v==T) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> flow=<span class="number">1</span>&lt;&lt;<span class="number">30</span>)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (x==T || !flow) <span class="keyword">return</span> flow;</div><div class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>, u;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> &amp;j=cur[x];~j;j=edge[j].nxt)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">int</span> v=edge[j].v;</div><div class="line">			<span class="keyword">if</span> (d[v]==d[x]+<span class="number">1</span> &amp;&amp; (u = DFS(v, min(flow,edge[j].c))))</div><div class="line">			&#123;</div><div class="line">				edge[j].c -= u; edge[j^<span class="number">1</span>].c += u;</div><div class="line">				flow -= u, sum += u;</div><div class="line">				<span class="keyword">if</span> (!flow) <span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (!sum) d[x]=<span class="number">-1</span>;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">dinic</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(BFS())</div><div class="line">		&#123;</div><div class="line">			<span class="built_in">memcpy</span>(cur,head,<span class="keyword">sizeof</span> cur);</div><div class="line">			ans += DFS(S);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> ans;</div><div class="line">	&#125;</div><div class="line">&#125;; </div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> dinic;</div></pre></td></tr></table></figure>
+<h2 id="2-二分图匹配"><a href="#2-二分图匹配" class="headerlink" title="2. 二分图匹配"></a>2. 二分图匹配</h2><p> $O(E\sqrt V)$ 的 Hopcorft-Karp 算法（dinic 二分图版本）。</p>
+<p>复杂度证明时可以注意到如果存在长度大于 $\sqrt V$ 的增广路，这样的增广路不超过$\sqrt V$ 条</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">namespace</span> HopcorftKarp</div><div class="line">&#123;</div><div class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></div><div class="line">		<span class="keyword">int</span> u, v, nxt;</div><div class="line">	&#125; edge[MAXM&lt;&lt;<span class="number">1</span>];</div><div class="line">	<span class="keyword">int</span> ecnt, head[MAXN],mx[MAXN],my[MAXN];</div><div class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que; </div><div class="line">	<span class="keyword">int</span> dx[MAXN],dy[MAXN];</div><div class="line">	<span class="keyword">bool</span> vis[MAXN];</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span> head);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="keyword">inline</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></div><div class="line">	&#123;</div><div class="line">		edge[ecnt].u=u, edge[ecnt].v=v, edge[ecnt].nxt=head[u], head[u]=ecnt++;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">	&#123;	</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = head[x]; ~i; i=edge[i].nxt)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">int</span> y=edge[i].v;</div><div class="line">			<span class="keyword">if</span> (!vis[y] &amp;&amp; dy[y]==dx[x]+<span class="number">1</span>)</div><div class="line">			&#123;</div><div class="line">				vis[y]=<span class="number">1</span>;</div><div class="line">				<span class="keyword">if</span> (my[y]==<span class="number">-1</span> || find (my[y]))</div><div class="line">				&#123;</div><div class="line">					mx[x]=y; my[y]=x;</div><div class="line">					<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">matching</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="built_in">memset</span>(mx,<span class="number">-1</span>,<span class="keyword">sizeof</span> mx);</div><div class="line">		<span class="built_in">memset</span>(my,<span class="number">-1</span>,<span class="keyword">sizeof</span> my);</div><div class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(<span class="number">1</span>)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">bool</span> flag = <span class="literal">false</span>;</div><div class="line">			<span class="keyword">while</span>(!que.empty()) que.pop();</div><div class="line">			<span class="built_in">memset</span>(dx, <span class="number">0</span>, <span class="keyword">sizeof</span> dx);</div><div class="line">			<span class="built_in">memset</span>(dy, <span class="number">0</span>, <span class="keyword">sizeof</span> dy);</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span> (mx[i]==<span class="number">-1</span>) que.push(i);</div><div class="line">			<span class="keyword">while</span>(!que.empty())</div><div class="line">			&#123;</div><div class="line">				<span class="keyword">int</span> x=que.front(); que.pop();</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j=head[x]; ~j; j=edge[j].nxt)</div><div class="line">				&#123;</div><div class="line">					<span class="keyword">int</span> y=edge[j].v;</div><div class="line">					<span class="keyword">if</span> (!dy[y])</div><div class="line">					&#123;</div><div class="line">						dy[y]=dx[x]+<span class="number">1</span>;</div><div class="line">						<span class="keyword">if</span> (my[y]!=<span class="number">-1</span>) </div><div class="line">						&#123;</div><div class="line">							que.push(my[y]),dx[my[y]] = dy[y]+<span class="number">1</span>;</div><div class="line">						&#125;</div><div class="line">						<span class="keyword">else</span> flag=<span class="number">1</span>;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (!flag) <span class="keyword">break</span>;</div><div class="line">			<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span> vis);</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span> (mx[i]==<span class="number">-1</span>&amp;&amp;find(i)) ++ans;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> ans;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="3-费用流"><a href="#3-费用流" class="headerlink" title="3. 费用流"></a>3. 费用流</h2><p>重标号 Dijkstra</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">namespace</span> MinCostFlow</div><div class="line">&#123;</div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1005</span>;</div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">500005</span>;</div><div class="line">    <span class="keyword">int</span> S,T,head[MAXN],ecnt;</div><div class="line">    <span class="keyword">bool</span> vis[MAXN];</div><div class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">arc</span>&#123;</span></div><div class="line">        <span class="keyword">int</span> v, f, c, nxt;</div><div class="line">    &#125;edge[MAXM];</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="keyword">inline</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> c, <span class="keyword">int</span> cost)</span></span></div><div class="line">    &#123;</div><div class="line">        edge[ecnt]=(arc)&#123;v,c,cost,head[u]&#125;;head[u]=ecnt++;</div><div class="line">        edge[ecnt]=(arc)&#123;u,<span class="number">0</span>,-cost,head[v]&#125;;head[v]=ecnt++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> maxflow, mincost, d[MAXN], h[MAXN];</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">Dijkstra</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;, <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt;,greater&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; &gt; Q;</div><div class="line">        <span class="built_in">memset</span>(d,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> d);</div><div class="line">        d[S]=<span class="number">0</span>; Q.push(make_pair(d[S],S));</div><div class="line">        <span class="keyword">while</span>(!Q.empty())</div><div class="line">        &#123;</div><div class="line"></div><div class="line">            <span class="keyword">int</span> x=Q.top().second, w = Q.top().first; Q.pop();</div><div class="line">            <span class="comment">// de(x)</span></div><div class="line">            <span class="keyword">if</span> (w &gt; d[x]) <span class="keyword">continue</span>;</div><div class="line">            <span class="keyword">if</span> (x == T) &#123;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;= T; i++)</div><div class="line">                &#123;</div><div class="line">                    h[i]=min(h[i]+d[i],INF);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=head[x];~j;j=edge[j].nxt)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">int</span> v=edge[j].v, z=edge[j].c+h[x]-h[v];</div><div class="line">                <span class="keyword">if</span> (edge[j].f &amp;&amp; d[v] &gt; d[x] + z) &#123;</div><div class="line">                    d[v] = d[x] + z;</div><div class="line">                    Q.push(make_pair(d[v],v));</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> flow = <span class="number">1</span>&lt;&lt;<span class="number">30</span>)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (x == T)</div><div class="line">        &#123;</div><div class="line">            maxflow += flow, mincost += h[T]*flow;</div><div class="line">            <span class="keyword">return</span> flow;</div><div class="line">        &#125; vis[x]=<span class="number">1</span>; <span class="keyword">int</span> sum = <span class="number">0</span>, u;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = head[x]; ~j; j =edge[j].nxt)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> v=edge[j].v;</div><div class="line">            <span class="keyword">if</span> (edge[j].f &amp;&amp; !vis[v] &amp;&amp; h[v] == edge[j].c + h[x])</div><div class="line">            &#123;</div><div class="line">                u = DFS(v, min(flow, edge[j].f));</div><div class="line">                edge[j].f -= u, edge[j^<span class="number">1</span>].f += u;</div><div class="line">                flow -= u, sum += u;</div><div class="line">                <span class="keyword">if</span> (!flow) <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sum;</div><div class="line">    &#125;</div><div class="line">    pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; MinCostMaxFlow()</div><div class="line">    &#123;</div><div class="line">      	<span class="comment">//memset(h,0,sizeof h); 无负边时可选。</span></div><div class="line">        <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</div><div class="line">        <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span> vis);</div><div class="line">        <span class="built_in">memset</span>(h,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> h);</div><div class="line">        h[S]=<span class="number">0</span>, vis[S]=<span class="number">1</span>, Q.push(S);</div><div class="line">        <span class="keyword">while</span>(!Q.empty())</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> x = Q.front(); Q.pop(); vis[x]=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = head[x];~j;j=edge[j].nxt)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">int</span> v=edge[j].v, z=edge[j].c;</div><div class="line">                <span class="keyword">if</span> (edge[j].f &amp;&amp; h[v] &gt; h[x]+z)</div><div class="line">                &#123;</div><div class="line">                    h[v]=h[x]+z;</div><div class="line">                    <span class="keyword">if</span> (!vis[v])</div><div class="line">                    &#123;</div><div class="line">                        Q.push(v);vis[v]=<span class="number">1</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        maxflow=<span class="number">0</span>, mincost=<span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(Dijkstra())</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">do</span> &#123;</div><div class="line">                <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</div><div class="line">            &#125; <span class="keyword">while</span>(DFS(S));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> make_pair(maxflow,mincost);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://connorzhong.github.io/2017/10/24/网络流学习/" data-id="cj95xnhyx00035ti4b8ad3o8i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/02/Cayley-公式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Cayley 公式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/24/网络流学习/">网络流学习</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/02/Cayley-公式/">Cayley 公式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/25/反演魔术小结/">反演魔术小结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/20/每日CF计划/">每日CF计划</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/19/Leetcode-Contests/">Leetcode Contests</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 ConnorZhong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
