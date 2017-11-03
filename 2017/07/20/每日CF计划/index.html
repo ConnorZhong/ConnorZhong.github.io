@@ -5,16 +5,16 @@
   
   <title>每日CF计划 | ConnorZhong is weak</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $10$。 目前做了多少题了： $53$。  TBDCodeforces Round #406 (5/8) CF 786A 有向图博弈，根据必胜必败态的性质来进行更新。很惭愧这么晚才补这个题。 CF 786C 考虑所有的答案之和不超过 $n\log n$ 个。所以题目变成了用 $O(\log n)$ 的复杂度查询给定 $l,k$ 求最远">
+  <meta name="description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $15$。 目前做了多少题了： $84$。  TBDCodeforces Round #434 (6/7) CF 860A $n^2$ dp 显而易见。 CF 860B Trie 树。把所有的字串都直接暴力插入。 CF 860C 移动的方法很容易想，如果有空位，我们总可以通过最多 $n$ 次交换，否则我们就构造一个空位，总可以找到最多">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日CF计划">
 <meta property="og:url" content="http://connorzhong.github.io/2017/07/20/每日CF计划/index.html">
 <meta property="og:site_name" content="ConnorZhong is weak">
-<meta property="og:description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $10$。 目前做了多少题了： $53$。  TBDCodeforces Round #406 (5/8) CF 786A 有向图博弈，根据必胜必败态的性质来进行更新。很惭愧这么晚才补这个题。 CF 786C 考虑所有的答案之和不超过 $n\log n$ 个。所以题目变成了用 $O(\log n)$ 的复杂度查询给定 $l,k$ 求最远">
-<meta property="og:updated_time" content="2017-07-20T19:03:56.000Z">
+<meta property="og:description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $15$。 目前做了多少题了： $84$。  TBDCodeforces Round #434 (6/7) CF 860A $n^2$ dp 显而易见。 CF 860B Trie 树。把所有的字串都直接暴力插入。 CF 860C 移动的方法很容易想，如果有空位，我们总可以通过最多 $n$ 次交换，否则我们就构造一个空位，总可以找到最多">
+<meta property="og:updated_time" content="2017-11-03T00:33:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每日CF计划">
-<meta name="twitter:description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $10$。 目前做了多少题了： $53$。  TBDCodeforces Round #406 (5/8) CF 786A 有向图博弈，根据必胜必败态的性质来进行更新。很惭愧这么晚才补这个题。 CF 786C 考虑所有的答案之和不超过 $n\log n$ 个。所以题目变成了用 $O(\log n)$ 的复杂度查询给定 $l,k$ 求最远">
+<meta name="twitter:description" content="Overview暑假每天坚持做 CF！  目前做了多少套了： $15$。 目前做了多少题了： $84$。  TBDCodeforces Round #434 (6/7) CF 860A $n^2$ dp 显而易见。 CF 860B Trie 树。把所有的字串都直接暴力插入。 CF 860C 移动的方法很容易想，如果有空位，我们总可以通过最多 $n$ 次交换，否则我们就构造一个空位，总可以找到最多">
   
     <link rel="alternate" href="/atom.xml" title="ConnorZhong is weak" type="application/atom+xml">
   
@@ -91,10 +91,18 @@
       
         <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>暑假每天坚持做 CF！</p>
 <ul>
-<li>目前做了多少套了： $10$。</li>
-<li>目前做了多少题了： $53$。</li>
+<li>目前做了多少套了： $15$。</li>
+<li>目前做了多少题了： $84$。</li>
 </ul>
-<h1 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h1><h2 id="Codeforces-Round-406-5-8"><a href="#Codeforces-Round-406-5-8" class="headerlink" title="Codeforces Round #406 (5/8)"></a>Codeforces Round #406 (5/8)</h2><ul>
+<h1 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h1><h2 id="Codeforces-Round-434-6-7"><a href="#Codeforces-Round-434-6-7" class="headerlink" title="Codeforces Round #434 (6/7)"></a>Codeforces Round #434 (6/7)</h2><ul>
+<li><code>CF 860A</code> $n^2$ dp 显而易见。</li>
+<li><code>CF 860B</code> Trie 树。把所有的字串都直接暴力插入。</li>
+<li><code>CF 860C</code> 移动的方法很容易想，如果有空位，我们总可以通过最多 $n$ 次交换，否则我们就构造一个空位，总可以找到最多 $n + 1$ 步的方法。主要是读入和实现麻烦一些。</li>
+<li><code>CF 860D</code> 需要注意到对于每个连通块，$\left \lfloor \frac{m}{2}  \right \rfloor$ 的匹配是必然的，注意下可以一次 dfs 实现。</li>
+<li><code>CF 861A</code> 将 $n$ 对 $10,5,2$ 分解。不够的末尾补$0$</li>
+<li><code>CF 861B</code> 推一个不等式 $t(f-1) &lt;k\leq tf$ .使劲搞搞这个不等式就可以了。</li>
+</ul>
+<h2 id="Codeforces-Round-406-5-8"><a href="#Codeforces-Round-406-5-8" class="headerlink" title="Codeforces Round #406 (5/8)"></a>Codeforces Round #406 (5/8)</h2><ul>
 <li><code>CF 786A</code> 有向图博弈，根据必胜必败态的性质来进行更新。很惭愧这么晚才补这个题。</li>
 <li><code>CF 786C</code> 考虑所有的答案之和不超过 $n\log n$ 个。所以题目变成了用 $O(\log n)$ 的复杂度查询给定 $l,k$ 求最远的 $r$，标程可持久化线段树。学习 comment 学到了利用倍增的思想在树状数组上求最远延伸 $r$，所以就相当于把询问离线了，所有的询问一起做。枚举 $l$ 时，把 $l-1$ 位置减 $1$， 下一个同样数字的位置加 $1$，就好了。  </li>
 </ul>
@@ -137,7 +145,32 @@
 <li><code>CF 818E</code> 对 $k$ 分解质因数，后面处理的时候只用 $k$ 的质因数，其他的可以忽略，枚举一下 $x$，发现 $y$ 是单调的，因此拿个 map 维护一下当前遇到的相应质因数个数。一路坐过去就可以 $O(n*\log k)$。</li>
 <li><code>CF 818F</code> 结论易猜，就是选 $x$ 个节点出来，与剩下的 $n-x$ 个节点连接做桥。所以表达式 $2*x \leq (n-x)(n-x-1)/2$ 零点附近的两个值取得答案。二分以下，或者三分一下。</li>
 </ul>
-<h1 id="DONE"><a href="#DONE" class="headerlink" title="DONE"></a>DONE</h1><h2 id="Codeforces-Round-420-5-5"><a href="#Codeforces-Round-420-5-5" class="headerlink" title="Codeforces Round #420 (5/5)"></a>Codeforces Round #420 (5/5)</h2><ul>
+<h1 id="DONE"><a href="#DONE" class="headerlink" title="DONE"></a>DONE</h1><h3 id="Codeforces-Round-442-6-6-DONE"><a href="#Codeforces-Round-442-6-6-DONE" class="headerlink" title="Codeforces Round #442 (6/6) DONE"></a>Codeforces Round #442 (6/6) DONE</h3><ul>
+<li><code>CF 877A</code> …</li>
+<li><code>CF 877B</code> 前缀和，暴力枚举。</li>
+<li><code>CF 877C</code> 先炸一次偶数，再炸一次奇数，再炸一次偶数。ok</li>
+<li><code>CF 877D</code> 优先队列 bfs，每次都走到黑为止，状态同时维护从哪个方法来的？ 题解用 set 删也不错。 </li>
+<li><code>CF 877E</code> 裸的树转一维序列区间修改区间查询。</li>
+<li><code>CF 877F</code> 莫队。</li>
+</ul>
+<h3 id="Codeforces-Round-441-8-8-DONE"><a href="#Codeforces-Round-441-8-8-DONE" class="headerlink" title="Codeforces Round #441 (8/8) DONE"></a>Codeforces Round #441 (8/8) DONE</h3><ul>
+<li><code>CF 876A</code>  xjb gao</li>
+<li><code>CF 876B</code> 根据所有数模 $m$ 得到的剩余类分组，找到大于等于 $k$ 的组。</li>
+<li><code>CF 875A</code> 爆搜一下 $n-81$ 到 $n$ 之间的数。</li>
+<li><code>CF 875B</code> 冷静一下就不会像比赛中那样吃那么多 shit。考虑每次操作后的答案就是总的 $1$ 个数减去最长后缀 $1$  的长度，后缀是单调的，暴力维护后缀。  </li>
+<li><code>CF 875C</code> $2-SAT$ 。我们很容易根据上下相邻的两个串必须字典序有序来判断出字符之间选择大小写的关系，即通过最长公共前缀后一个字符来判断大小写关系，如果存在上面字符串包含下面的字符串则代表无解，特判输出。</li>
+<li><code>CF 875D</code> 做法很多。考虑答案总数减去不合法的情况。不合法的情况即一大串数或起来等于最大值。于是我们考虑每一段都在其最靠左的最大值的位置产生贡献。于是可以先用单调栈处理出每个的区间。还可以拆位找到每一位 $1$ 位置的有序序列。于是就可以对于最大值的每一个 $0$ 位拆位考虑缩小区间。$O(n\log n\log A)$。</li>
+<li><code>CF 875E</code>  考虑二分一个距离。考虑值域为布尔类型的 $f(i,j)$ 为当前送到第 $i$ 个人，另一个人在第 $j$ 个位置是否可行。初始状态只有 $s_1,s_2$ 两个点为 $1$，转移时对新的目标位置及其左右能延伸到的最大距离之内查找是否有 $1$，找到后对以外的位置区间置 $0$. 将新的位置设为 $1$ ，否则就不可达成。这个做法我写的常数巨大 1900ms 卡过。别人为什么都是 500 ms 左右啊？</li>
+<li><code>CF 875F</code>  给一个很大的二分图，边上有权，但是其中一边的点度等于 $2$，且这个节点连的两条边权值一样，求最大权匹配。由于有一边的度一直为 $2$，且权是以点为基础的。因此我们考虑把所有的男生当作点，女生当作边。做最大生成树。可以注意到只要联通块是棵树，那么我们可以随意往里面加边，每个边一定都能找到一个顶点归附，如果形成了一个环，则整个连通块都被固定了，于是这个题就变成了求最大生成一个最多有一个环的环林。Kruscal 。</li>
+</ul>
+<h3 id="Codeforces-Round-439-5-5-DONE"><a href="#Codeforces-Round-439-5-5-DONE" class="headerlink" title="Codeforces Round #439 (5/5) DONE"></a>Codeforces Round #439 (5/5) DONE</h3><ul>
+<li><code>CF 869A</code> 有趣的题，可以发现如果 $z = x_i\text{ xor }  y_j$ 存在于序列中，则 $z \text{ xor } x_i = y_j$ 和 $z \text{ xor } y_j = x_i $ 因此永远是偶数次。</li>
+<li><code>CF 869B</code> 模 $10$ 乘法乘到 $0$ 就停。</li>
+<li><code>CF 869C</code> 感觉自己是不是题解看多了智商下线了。</li>
+<li><code>CF 869D</code> qls 的题好难难啊，因为边很少，我们只留下连边的点以及其父亲节点，其他节点全部缩点。然后暴力搜就可以了$O((m\log n)^2m!2^m)$. (每次搜索都会将所有缩点后的节点作为起点终点各一次，$(m\log n)^2$， 每次选择进入 $m$ 边和顺序。$m!2^m$);</li>
+<li><code>CF 869E</code> 可以注意到没有相交，或者切块的情况。因此我们用树状数组维护区间加区间减。用一个随机数随机赋值每个块，这样只要判两点是否等值。</li>
+</ul>
+<h2 id="Codeforces-Round-420-5-5-DONE"><a href="#Codeforces-Round-420-5-5-DONE" class="headerlink" title="Codeforces Round #420 (5/5) DONE"></a>Codeforces Round #420 (5/5) DONE</h2><ul>
 <li><code>CF 821A</code> 水题。</li>
 <li><code>CF 821B</code> 枚举下每一个 $y$，求出直线下方的最大的 $x$。</li>
 <li><code>CF 821C</code> 用栈模拟一下，一旦顶部不匹配，就把栈清空模拟打乱，标记一下打乱的值。重复下就做完了。</li>
@@ -151,14 +184,22 @@
 <li><code>CF 811D</code> 傻逼交互题，随便搜条路径，走一个未知指令前注意判断一下自己的前进方向有没有被交换。 就可以了。</li>
 <li><code>CF 811E</code> 套路线段树维护连通性，每个节点用并查集维护一下左侧和右侧边界的连通性，合并的时候就把相邻接的边合并一下，扣除合并的联通快个数。学习了下 zscls 的写法，很棒棒啊。</li>
 </ul>
-<h2 id="Codeforces-Round-404-5-5"><a href="#Codeforces-Round-404-5-5" class="headerlink" title="Codeforces Round #404 (5/5)"></a>Codeforces Round #404 (5/5)</h2><ul>
+<h2 id="Codeforces-Round-404-5-5-DONE"><a href="#Codeforces-Round-404-5-5-DONE" class="headerlink" title="Codeforces Round #404 (5/5) DONE"></a>Codeforces Round #404 (5/5) DONE</h2><ul>
 <li><code>CF 785A</code> 水。</li>
 <li><code>CF 785B</code> 水。</li>
 <li><code>CF 785C</code> 解方程。</li>
 <li><code>CF 785D</code> 组合数学，很努力的数一下啊。很容易考虑枚举每一位 $i$，当前位置必选为左括号，设 $i$ 之前的左扩号数位 $l$， $i$ 之后的右括号数为 $r$，$\sum C(l,j-1)C(r,j)$，变型一下，等同于$\sum C(l,j-1)C(r,r-j)$ 即从 $l+r$ 个球中取 $r-1$ 个， $C(l+r,r-1)$。这就好了啊～谢谢 qls 解释证明。</li>
 <li><code>CF 785E</code> 分块大法好。几乎很少写分块，拿着这个题练了练手。 </li>
 </ul>
-<h2 id="Educational-Codeforces-Round-25"><a href="#Educational-Codeforces-Round-25" class="headerlink" title="Educational Codeforces Round 25"></a>Educational Codeforces Round 25</h2><ul>
+<h2 id="Educational-Codeforces-Round-31-6-6-DONE"><a href="#Educational-Codeforces-Round-31-6-6-DONE" class="headerlink" title="Educational Codeforces Round 31 (6/6) DONE"></a>Educational Codeforces Round 31 (6/6) DONE</h2><ul>
+<li><code>CF 884A</code> happy</li>
+<li><code>CF 884B</code> happy too</li>
+<li><code>CF 884C</code> 注意到一定是若干个环。操作就是把最大的环连接起来。</li>
+<li><code>CD 884D</code> 考虑反向的过程。即若干组球合并起来。等价于构造字符集为 $\Sigma =3$ 的哈夫曼树。</li>
+<li><code>CF 884E</code> 考虑每次用并查集维护上面一层的连通性。每处理完一层需要把 $0$ 的位置全部抠出去。</li>
+<li><code>CF 884F</code> 考虑费用流，先对$26$个字符建点，连流量为字符数量费用为 $0$ 的边，考虑相对的两个不能选取同一个字符，因此建立对每个相对的位置对每一个字符建立一个中间点，保证只有流量 $1$ 可以抵达这个点，然后这个点往终点连负权的边，表示贡献，跑最大费用最大流。也可以贪心，因为每次匹配的话最多只会有一种字符需要移动到其他已经能够匹配的边上，这时候用从小到大枚就可以了（没有亲手实现）。</li>
+</ul>
+<h2 id="Educational-Codeforces-Round-25-7-7-DONE"><a href="#Educational-Codeforces-Round-25-7-7-DONE" class="headerlink" title="Educational Codeforces Round 25 (7/7) DONE"></a>Educational Codeforces Round 25 (7/7) DONE</h2><ul>
 <li><code>CF 825A</code> 水题。</li>
 <li><code>CF 825B</code> 水题，搜。</li>
 <li><code>CF 825C</code> 这个题。题意没有说明下取整，读题有毒。</li>
@@ -171,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj95xnhz400065ti4yjnf8qqp" class="article-share-link">Share</a>
+      <a data-url="http://connorzhong.github.io/2017/07/20/每日CF计划/" data-id="cj9j638wt0003foi4gei14goy" class="article-share-link">Share</a>
       
       
     </footer>
